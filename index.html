@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" xintegrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Favicon (replace with your actual favicon) -->
-    <link rel="icon" href="https://placehold.co/32x32/EFEFEF/AAAAAA&text=SM" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/fevicon.jpg" type="image/jpeg">
 
     <style>
         /* Embedded CSS from your style.css */
@@ -25,8 +25,10 @@
         /*------------Header CSS--------------*/
         #header {
             height: 100vh;
-            /* Placeholder background image */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://placehold.co/1920x1080/333333/FFFFFF&text=Portfolio+Background);
+            /* GitHub background image */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/gallery03.jpg);
+            /* Fallback color if image fails */
+            background-color: #333; 
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
@@ -325,8 +327,10 @@
         .contact {
             padding-top: 80px;
             padding-bottom: 80px; /* Added padding bottom */
-            /* Placeholder background image */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://placehold.co/1920x1080/444444/FFFFFF&text=Contact+Background);
+            /* GitHub background image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/background3.jpg);
+            /* Fallback color if image fails */
+            background-color: #444;
             background-position: center;
             background-size: cover;
             background-attachment: fixed;
@@ -506,8 +510,9 @@
     <section id="header">
         <div class="container text-center">
             <div class="user-box">
-                <!-- Replace with your actual image -->
-                <img src="https://placehold.co/250x250/E0E0E0/B0B0B0&text=SM" alt="Sanjay Mistry">
+                <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/sanjaynew.jpeg" 
+                     alt="Sanjay Mistry"
+                     onerror="this.onerror=null; this.src='https://placehold.co/250x250/E0E0E0/B0B0B0&text=SM';">
                 <h1>SANJAY MISTRY</h1>
                 <h5>Highly skilled Frontend Developer</h5>
             </div>
@@ -521,8 +526,11 @@
     <section id="user-info">
         <div class="nav-bar">
             <nav class="navbar navbar-expand-lg">
-                <!-- Replace with your actual logo or remove -->
-                <a class="navbar-brand" href="#"><img src="https://placehold.co/100x40/CCCCCC/777777&text=Logo" alt="Logo"></a>
+                <a class="navbar-brand" href="#">
+                    <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/logo.jpg" 
+                         alt="Logo"
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x40/CCCCCC/777777&text=Logo';">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -555,8 +563,10 @@
         <div class="about container" id="about">
             <div class="row">
                 <div class="col-md-5 text-center">
-                    <!-- Replace with your actual image -->
-                    <img src="https://placehold.co/400x400/F0F0F0/A0A0A0&text=Sanjay" class="profile-img" alt="Sanjay Mistry Profile">
+                    <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/sanjaynew.jpeg" 
+                         class="profile-img" 
+                         alt="Sanjay Mistry Profile"
+                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/F0F0F0/A0A0A0&text=Sanjay';">
                 </div>
                 <div class="col-md-7">
                     <h3>About Me</h3>
@@ -759,25 +769,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" xintegrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" xintegrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
-    <!-- Smooth Scroll JS (You'll need to have this file or use a CDN) -->
-    <!-- <script src="smooth-scroll.js"></script> 
-    <script>
-        // var scroll = new SmoothScroll('a[href*="#"]'); // If using smooth-scroll.js
-        // Basic smooth scroll with jQuery for modern browsers:
-        $(document).ready(function(){
-          $("a").on('click', function(event) {
-            if (this.hash !== "") {
-              event.preventDefault();
-              var hash = this.hash;
-              $('html, body').animate({
-                scrollTop: $(hash).offset().top
-              }, 800, function(){
-                window.location.hash = hash;
-              });
-            }
-          });
-        });
-    </script> -->
     <script>
         // Vanilla JS Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
