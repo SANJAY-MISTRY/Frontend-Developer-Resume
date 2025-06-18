@@ -1,795 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Sanjay Mistry - Frontend Developer</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" xintegrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Favicon -->
-    <link rel="icon" href="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/fevicon.jpg" type="image/jpeg">
+	<title>Sanjay Resume</title>
+	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  	<link rel="stylesheet" type="text/css" href="style.css">
 
-    <style>
-        /* Embedded CSS from your style.css */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            overflow-x: hidden; /* Added to prevent horizontal scroll on small screens */
-        }
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-        /*------------Header CSS--------------*/
-        #header {
-            height: 100vh;
-            /* GitHub background image */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/gallery03.jpg);
-            /* Fallback color if image fails */
-            background-color: #333; 
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-        }
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-        .user-box {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            text-align: center; /* Ensure text is centered */
-        }
-
-        .user-box img {
-            border-radius: 50%;
-            width: 200px; /* Adjusted for better responsiveness */
-            height: 200px; /* Ensure aspect ratio */
-            object-fit: cover; /* Ensure image covers the area */
-            border: 5px solid #fff;
-            margin-bottom: 15px;
-        }
-
-        .user-box h1 {
-            color: #fff;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .user-box h5 {
-            color: #fff;
-            font-size: 1.25rem; /* Responsive font size */
-        }
-
-        .scroll-btn {
-            bottom: 30px; /* Increased bottom margin */
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 2px solid #fff; /* Slightly thinner border */
-            padding: 8px 12px 20px; /* Adjusted padding */
-            border-radius: 30px;
-        }
-
-        .scroll-bar span {
-            display: block; /* Make span a block to control its size */
-            width: 4px; /* Width of the inner scroll element */
-            height: 10px; /* Height of the inner scroll element */
-            background-color: #fff;
-            border-radius: 2px; /* Rounded corners for the scroll element */
-            margin: 0 auto; /* Center the scroll element */
-        }
-
-        .scroll-bar {
-            animation: mover 1s infinite alternate;
-        }
-
-        @keyframes mover {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(10px); } /* Reduced movement */
-        }
-
-        /*------------ Nav Bar & User Info Section CSS --------------*/
-        #user-info { /* This ID is used for the section containing the navbar */
-            /* Styles for the overall section if needed */
-        }
-
-        .nav-bar {
-            top: 0;
-            position: sticky;
-            z-index: 1000; /* Ensure navbar is above other content */
-        }
-
-        .navbar {
-            background-color: #000 !important; /* Ensure high specificity */
-            padding: 0.5rem 1rem; /* Standard Bootstrap padding */
-        }
-
-        .navbar-brand img {
-            height: 40px; /* Adjusted logo height */
-        }
-
-        .navbar-toggler {
-            border-color: rgba(255,255,255,0.5); /* Lighter border for toggler */
-        }
-        .navbar-toggler:focus{
-            outline: none;
-        }
-
-        .nav-bar .fa-bars {
-            font-size: 28px; /* Adjusted icon size */
-            color: #fff;
-        }
-
-        .navbar-nav {
-            margin-left: auto; /* Pushes nav items to the right */
-        }
-        .navbar-nav .nav-item {
-            margin-left: 10px; /* Spacing between nav items */
-        }
-
-        .nav-link {
-            color: #fff !important;
-            font-weight: 500; /* Slightly bolder font */
-            padding: 0.5rem 1rem;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #gold !important; /* Highlight color on hover/active */
-        }
-        
-        /* Cylon eye animation - kept as is */
-        .view_port {
-            background-color: black;
-            height: 5px; /* Reduced height */
-            width: 100%;
-            overflow: hidden;
-        }
-        .cylon_eye {
-            background-color: red;
-            background-image: linear-gradient(to right,
-            rgba(0, 0, 0, .9) 25%,
-            rgba(0, 0, 0, .1) 50%,
-            rgba(0, 0, 0, .9) 75%);
-            color: white;
-            height: 100%;
-            width: 20%; /* Reduced width of the eye */
-            animation: 4s linear 0s infinite alternate move_eye;
-        }
-        @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; } }
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="icon" href="img/fevicon.jpg" type="image/jpg">
 
 
-        /*----------About Me Section----------*/
-        .about {
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .profile-img {
-            max-width: 100%; /* Make image responsive */
-            height: auto;
-            border-radius: 15px; /* Softer corners */
-            border: 5px solid #eee;
-            margin-bottom: 20px;
-        }
-        .about h3{
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-        .about p {
-            line-height: 1.7;
-            color: #555;
-            text-align: justify;
-        }
-
-        /*------------Resume Section (Experience & Education)------------*/
-        .resume {
-            padding-top: 80px;
-            padding-bottom: 50px;
-            background: #f9f9f9;
-        }
-
-        .resume h1, .resume h2 { /* Added h2 for consistency */
-            margin-bottom: 40px;
-            color: #333;
-            font-weight: 600;
-        }
-        .resume h3 {
-            font-size: 1.3rem;
-            color: #007bff; /* Primary color for job titles */
-            margin-bottom: 5px;
-        }
-        .resume h4 {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        .resume .company-duration {
-            font-style: italic;
-            color: #777;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .timeline {
-            list-style-type: none;
-            position: relative;
-            padding-left: 0; /* Remove default padding */
-        }
-
-        .timeline:before {
-            content: '';
-            background: #007bff; /* Primary color for timeline */
-            display: inline-block;
-            position: absolute;
-            left: 9px; /* Adjusted for smaller dot */
-            width: 2px;
-            height: 100%;
-            z-index: 0; /* Behind the dots */
-        }
-
-        .timeline li {
-            margin-bottom: 30px; /* Increased spacing */
-            margin-left: 30px; /* Space for the dot */
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: relative; /* For ::before pseudo-element */
-        }
-
-        .timeline li:before {
-            content: '';
-            background: #fff;
-            border: 3px solid #007bff; /* Primary color for dot border */
-            display: inline-block;
-            position: absolute;
-            border-radius: 50%;
-            left: -22px; /* Position dot correctly */
-            top: 20px; /* Align with text */
-            width: 12px; /* Smaller dot */
-            height: 12px;
-            z-index: 1; /* Above the line */
-        }
-        .timeline ul {
-            padding-left: 20px; /* Indent for project details */
-            list-style-type: disc; /* Standard bullets for project points */
-        }
-        .timeline ul li {
-            background: none; /* Remove background for inner li */
-            box-shadow: none;
-            padding: 5px 0;
-            margin-left: 0;
-            margin-bottom: 5px;
-        }
-        .timeline ul li::before {
-            display: none; /* No dots for inner list items */
-        }
-        .tech-stack-timeline {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-
-        /*----------------Skills Section (repurposed from Services)--------------------*/
-        .skills-section { /* Renamed from .services for clarity */
-            padding-top: 80px;
-            padding-bottom: 80px;
-            background: #eee; /* Lighter background */
-        }
-
-        .skills-section h1 {
-            margin-bottom: 40px;
-            color: #333;
-            font-weight: 600;
-        }
-        .skills-category {
-            background: #fff;
-            padding: 25px;
-            margin-bottom: 30px; /* Space between categories */
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            min-height: 200px; /* Ensure consistent height */
-        }
-        .skills-category .fa {
-            font-size: 2rem;
-            color: #007bff;
-            margin-bottom: 15px;
-            display: block; /* Center icon */
-            text-align: center;
-        }
-        .skills-category h4 { /* Category title */
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .skills-category ul {
-            list-style-type: none;
-            padding-left: 0;
-            text-align: center;
-        }
-        .skills-category ul li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        .skills-category:hover { /* Subtle hover effect */
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease-in-out;
-        }
-
-        /*-------------------Contact Section---------------------*/
-        .contact {
-            padding-top: 80px;
-            padding-bottom: 80px; /* Added padding bottom */
-            /* GitHub background image */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/background3.jpg);
-            /* Fallback color if image fails */
-            background-color: #444;
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-            color: #fff;
-        }
-        .contact h1{
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-        .contact .row {
-            padding: 20px 0;
-            font-size: 1.1rem; /* Adjusted font size */
-        }
-        .contact .col-md-4 .fa {
-            padding: 10px;
-            font-size: 30px; /* Adjusted icon size */
-            margin-bottom: 10px;
-        }
-        .contact .col-md-4 h4 { /* For titles like Mobile No, Email Id */
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .contact .col-md-4 p, .contact .col-md-4 a {
-            color: #eee;
-            text-decoration: none;
-        }
-        .contact .col-md-4 a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-        .contact .btn {
-            padding: 10px 25px;
-            margin: 10px 5px; /* Adjusted margin */
-            border-radius: 30px;
-            border: 2px solid #fff; /* Slightly thinner border */
-            background: transparent;
-            color: #fff; /* Ensure text color is white */
-            font-weight: 500;
-        }
-        .contact .btn:hover {
-            background: #fff;
-            color: #333; /* Text color on hover */
-            transition: 0.4s;
-        }
-        .contact .btn .fa {
-            margin-right: 8px; /* Space between icon and text */
-            font-size: 1em; /* Match button text size */
-        }
-
-        .footer {
-            background-color: #000;
-            height: auto; /* Auto height */
-            padding: 20px 0; /* Padding for footer */
-            color: #fff;
-            text-align: center; /* Ensure text is centered */
-        }
-        .footer h5{
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        .fa-heart-o {
-            color: red;
-        }
-
-        /*--------------Social Icons Sidebar--------------*/
-        .social-icon {
-            top: 50%;
-            transform: translateY(-50%);
-            position: fixed; /* Changed to fixed for better persistence */
-            left: 0; /* Stick to the left */
-            z-index: 900; /* Below navbar but above most content */
-            width: auto; /* Auto width based on content */
-        }
-        .social-icon ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-        }
-        .social-icon ul li {
-            height: 45px; /* Adjusted size */
-            width: 45px;  /* Adjusted size */
-            list-style-type: none;
-            padding: 0; /* Remove padding, center icon instead */
-            margin-bottom: 5px; /* Space between icons */
-            color: #fff;
-            background-color: #000;
-            display: flex; /* For centering icon */
-            align-items: center; /* For centering icon */
-            justify-content: center; /* For centering icon */
-            border-top-right-radius: 5px; /* Rounded corners */
-            border-bottom-right-radius: 5px;
-            transition: all 0.3s ease; /* Smooth transition */
-        }
-        .social-icon ul li:hover {
-            background-color: #007bff; /* Primary color on hover */
-            transform: translateX(5px); /* Slight move on hover */
-        }
-        .social-icon ul li a {
-            color: #fff; /* Icon color */
-            font-size: 20px; /* Icon size */
-            display: block; /* Make link fill li for easier click */
-            text-align: center;
-            line-height: 45px; /* Vertically center icon if not using flex */
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
-            .profile-img {
-                max-width: 300px; /* Smaller image on tablets */
-                margin: 0 auto 20px auto; /* Center image */
-                display: block;
-            }
-            .about .col-md-7 {
-                text-align: center; /* Center text on tablets */
-            }
-             .about .col-md-7 p {
-                text-align: justify; /* Justify summary text */
-            }
-        }
-
-        @media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
-            .user-box img {
-                width: 150px;
-                height: 150px;
-            }
-            .user-box h1 {
-                font-size: 2rem;
-            }
-            .user-box h5 {
-                font-size: 1rem;
-            }
-            .resume h1, .skills-section h1, .contact h1 {
-                font-size: 1.8rem;
-            }
-            .timeline li {
-                margin-left: 20px; /* Adjust for smaller screens */
-                padding: 15px;
-            }
-            .timeline li:before {
-                left: -17px; /* Adjust dot position */
-            }
-            .social-icon { /* Hide sidebar icons on very small screens or adjust */
-                /* display: none; */ /* Option to hide */
-                 width: auto;
-            }
-            .social-icon ul li {
-                height: 40px;
-                width: 40px;
-            }
-            .social-icon ul li a {
-                font-size: 18px;
-                line-height: 40px;
-            }
-             .contact .col-md-4 {
-                margin-bottom: 20px; /* Add space between contact items on mobile */
-            }
-        }
-         @media (max-width: 575.98px) { /* Extra small devices (portrait phones, less than 576px) */
-            .navbar-nav {
-                width: 100%;
-                text-align: center;
-            }
-            .navbar-nav .nav-item {
-                margin-left: 0;
-                margin-bottom: 5px;
-            }
-            .profile-img {
-                max-width: 200px;
-            }
-         }
-
-    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <section id="header">
-        <div class="container text-center">
-            <div class="user-box">
-                <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/sanjaynew.jpeg" 
-                     alt="Sanjay Mistry"
-                     onerror="this.onerror=null; this.src='https://placehold.co/250x250/E0E0E0/B0B0B0&text=SM';">
-                <h1>SANJAY MISTRY</h1>
-                <h5>Highly skilled Frontend Developer</h5>
-            </div>
-        </div>
-        <div class="scroll-btn">
-            <div class="scroll-bar"><a href="#user-info"><span></span></a></div>
-        </div>
-    </section>
+	
+<section id="header">
+	
+	<div class="container text-center">
+		<!-- <div class="img-logo">
+			<img  src="img/logo.jpg">
+		</div> -->
+		
+		<div class="user-box">
+			<img src="img/sanjaynew.jpeg">
+			<h1>Sanjay Mistry</h1>
+			<h5>Frontend Developer</h5>
+		</div>
+	</div>
+	<div class="scroll-btn">
+		<div class="scroll-bar"><a href="#about"><span> </span></a>
+		</div>
+	</div>
+</section>
+<!------------------User Info Section----------------->
 
-    <!-- User Info Section (Contains Navbar) -->
-    <section id="user-info">
-        <div class="nav-bar">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
-                    <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/logo.jpg" 
-                         alt="Logo"
-                         onerror="this.onerror=null; this.src='https://placehold.co/100x40/CCCCCC/777777&text=Logo';">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav"> <!-- ml-auto removed to allow text-align:center on smaller screens -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#header">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">ABOUT ME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#resume">RESUME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills">SKILLS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">CONTACT</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <div class="view_port"> <!-- Cylon eye animation -->
-                <div class="cylon_eye"></div>
-            </div>
-        </div>
+<section id="user-info">
+	<div class="nav-bar">
+		<nav class="navbar navbar-expand-lg">
+		  <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <i class="fa fa-bars"></i>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#top">HOME </span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#about">ABOUT ME</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#resume">RESUME</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#services" tabindex="-1" aria-disabled="true">SKILLS</a>
+		      </li>
+		       <li class="nav-item">
+		        <a class="nav-link" href="#Experience" tabindex="-1" aria-disabled="true">EXPERIENCE</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#contact" tabindex="-1" aria-disabled="true">CONTACT</a>
+		      </li>
+		    </ul>
+		  </div>
 
-        <!-- About Me Section -->
-        <div class="about container" id="about">
-            <div class="row">
-                <div class="col-md-5 text-center">
-                    <img src="https://raw.githubusercontent.com/SANJAY-MISTRY/Frontend-Developer-Resume/master/img/sanjaynew.jpeg" 
-                         class="profile-img" 
-                         alt="Sanjay Mistry Profile"
-                         onerror="this.onerror=null; this.src='https://placehold.co/400x400/F0F0F0/A0A0A0&text=Sanjay';">
-                </div>
-                <div class="col-md-7">
-                    <h3>About Me</h3>
-                    <p>
-                        Highly skilled and results-oriented Frontend Developer with over 4 years of specialized experience in designing, developing, and deploying high-performance cross-platform mobile applications (iOS & Android) using React Native, ReactJS, and NextJS. Proven ability to manage CI/CD pipelines, optimize application performance (e.g., reducing deployment time by 50%), and lead project development. Eager to leverage expertise in cutting-edge frontend technologies to contribute to impactful user experiences and innovative solutions.
-                    </p>
-                     <p>
-                        Languages Known: English (Fluent), Hindi (Fluent), Gujarati (Native).
-                    </p>
-                </div>
-            </div>
-        </div>
+		</nav>
+		<div class="view_port">
+  <div class="polling_message">
+  </div>
+  <div class="cylon_eye"></div>
 
-        <!-- Social Icons Sidebar -->
-        <div class="social-icon">
-            <ul>
-                <!-- Update with your actual LinkedIn profile URL -->
-                <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/SANJAY-MISTRY" target="_blank"><i class="fa fa-github"></i></a></li>
-                <!-- Add other social links if needed -->
-            </ul>
-        </div>
+</div>
 
-        <!-- Skills Section (repurposed from 'services') -->
-        <div class="skills-section" id="skills">
-            <div class="container">
-                <h1 class="text-center">Technical Skills</h1>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="skills-category">
-                            <i class="fa fa-code"></i>
-                            <h4>Languages</h4>
-                            <ul>
-                                <li>JavaScript (ES6+)</li>
-                                <li>TypeScript</li>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>Dart</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="skills-category">
-                            <i class="fa fa-cogs"></i>
-                            <h4>Frameworks & Libraries</h4>
-                            <ul>
-                                <li>React Native, ReactJS, NextJS</li>
-                                <li>Flutter</li>
-                                <li>Redux (Saga, Thunk)</li>
-                                <li>Salesforce (React Native)</li>
-                                <!-- Add Tailwind CSS, Material UI if applicable -->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="skills-category">
-                            <i class="fa fa-wrench"></i>
-                            <h4>Tools & Platforms</h4>
-                            <ul>
-                                <li>Git, Bitbucket, Jira</li>
-                                <li>Postman, GitHub Actions (CI/CD)</li>
-                                <li>Firebase, Figma, Adobe XD</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                 <div class="row justify-content-center" style="margin-top: 20px;">
-                     <div class="col-md-4">
-                        <div class="skills-category">
-                            <i class="fa fa-database"></i>
-                            <h4>Databases & APIs</h4>
-                            <ul>
-                                <li>MySQL</li>
-                                <li>REST APIs</li>
-                                <li>SmartStore (Salesforce)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="skills-category">
-                            <i class="fa fa-users"></i>
-                            <h4>Methodologies</h4>
-                            <ul>
-                                <li>Agile Development</li>
-                                <li>Cross-Platform Development</li>
-                                <li>Responsive UI/UX Design</li>
-                            </ul>
-                        </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
+	</div>
 
-        <!-- Resume Section (Experience & Education) -->
-        <div class="resume" id="resume">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                         <h1>My Journey</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="text-center">Experience</h2>
-                        <ul class="timeline">
-                            <li>
-                                <h3>Software Developer (B3)</h3>
-                                <h4>SpurTree Technologies | Bangalore, India</h4>
-                                <span class="company-duration">March 2022 – Present</span>
-                                <p>Spearheaded and contributed to the full lifecycle of multiple mobile and web applications, focusing on delivering robust, scalable, and user-centric solutions. Managed and optimized CI/CD pipelines using GitHub Actions for both Android and iOS, achieving a <strong>50% reduction in deployment time</strong> for the MePrism app. Consistently resolved production bugs and enhanced application performance.</p>
-                                <strong>Key Projects:</strong>
-                                <ul>
-                                    <li><strong>Bira91 Beast:</strong> Leading development (Salesforce React Native), implemented SmartStore & KYC features. 
-                                        <div class="tech-stack-timeline">Tech: Salesforce, React Native, TypeScript, SmartStore.</div></li>
-                                    <li><strong>MePrism App:</strong> Led React Native app development for data privacy. 
-                                        <div class="tech-stack-timeline">Tech: React Native, TypeScript, GitHub Actions.</div></li>
-                                    <li><strong>MoonLight Collective App:</strong> Developed React Native app & ReactJS admin panel.
-                                        <div class="tech-stack-timeline">Tech: React Native, ReactJS, Redux.</div></li>
-                                    <li><strong>SPARQATAR:</strong> React Native e-commerce app with i18n.
-                                        <div class="tech-stack-timeline">Tech: React Native, Redux-Saga, i18n.</div></li>
-                                     <li><strong>ShopNow & Shimplinadhar:</strong> Led e-commerce app development.
-                                        <div class="tech-stack-timeline">Tech: React Native, Redux-Saga, i18n.</div></li>
-                                    <li><strong>Traccar App:</strong> Flutter development for data visibility, including iOS Watch app.
-                                        <div class="tech-stack-timeline">Tech: Flutter, Dart, REST APIs.</div></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>L1 Software Developer</h3>
-                                <h4>Chirpn IT Solutions | Pune, India</h4>
-                                 <span class="company-duration">June 2021 – February 2022</span>
-                                <p>Contributed to Sportly.Me (React Native app for junior athletes). Resolved production bugs, improved app performance, and developed new features.</p>
-                                <div class="tech-stack-timeline">Tech Stack: React Native, JavaScript (ES6), Redux Saga, Figma, Jira, REST APIs, i18n.</div>
-                            </li>
-                            <li>
-                                <h3>Software Developer</h3>
-                                <h4>First Floor Digital Agency | Mysore, India</h4>
-                                <span class="company-duration">December 2020 – June 2021</span>
-                                <p>Gained foundational experience with React Native, Flutter, and ReactJS, contributing to multiple cross-platform application projects.</p>
-                                <div class="tech-stack-timeline">Tech Stack: React Native, ReactJS, Flutter, JavaScript, Redux (Saga & Thunk), Adobe XD.</div>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="col-md-6">
-                        <h2 class="text-center">Education</h2>
-                        <ul class="timeline">
-                            <li>
-                                <h3>B.Tech/B.E. (Bachelor of Engineering/Technology)</h3>
-                                <h4>Gujarat Technological University (GTU)</h4>
-                                <span class="company-duration">2016 – 2019</span>
-                                <!-- Add branch if you want: e.g., Computer Science -->
-                            </li>
-                            <li>
-                                <h3>Diploma in Engineering</h3>
-                                <h4>Gujarat Technological University (GTU)</h4>
-                                <span class="company-duration">2013 – 2016</span>
-                                 <!-- Add branch if you want -->
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Contact Section -->
-        <div class="contact" id="contact">
-            <div class="container text-center">
-                <h1>Contact Me</h1>
-                <div class="row">
-                    <div class="col-md-4">
-                        <i class="fa fa-phone"></i>
-                        <h4>Mobile No</h4>
-                        <p><a href="tel:+918200209808">+91 8200209808</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <i class="fa fa-envelope"></i>
-                        <h4>Email Id</h4>
-                        <p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
-                    </div>
-                    <div class="col-md-4">
-                        <i class="fa fa-map-marker"></i>
-                        <h4>Address</h4>
-                        <p>Indiranagar, Bangalore, 560008</p>
-                    </div>
-                </div>
-                <!-- Update this link to your actual resume file -->
-                <a href="https://docs.google.com/document/d/1YgVd7odZpfbw9saZENteE4dr6ElloatjN1e6974O1-U/edit?usp=sharing" target="_blank" class="btn btn-primary"><i class="fa fa-download"></i> Download Resume</a>
-                <a href="mailto:smistry6518@gmail.com" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Hire Me</a>
-            </div>
-        </div>
 
-        <!-- Footer -->
-        <div class="footer text-center">
-            <h5>Made with <i class="fa fa-heart-o"></i> by Sanjay Mistry</h5>
-        </div>
-    </section>
+	<!------- About--------->
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" xintegrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" xintegrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" xintegrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    <script>
-        // Vanilla JS Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // For sticky navbar, calculate offset
-                    const navbarHeight = document.querySelector('.nav-bar') ? document.querySelector('.nav-bar').offsetHeight : 0;
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - navbarHeight;
-    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
-    </script>
+	<div class="about container" id="about">
+		<div class="row">
+			<div class="col-md-5 text-center">
+				<img src="img/sanjaynew.jpeg" class="profile-img">
+				
+			</div>
+			<div class="col-md-7" class="mydata">
+				<h3 style="color:gold">SANJAY MISTRY</h3>
+				<!-- <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book</p> -->
+				<ul class="timeline1">
+					<li>
+						
+						<h4><!-- <span> 2019 - </span> -->Personal Profile</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>DOB </b> :- JULY 04, 1997<br>
+						<b>Father’s Name </b> :- Yashwantbhai Mistry<br>
+						<b>Nationality</b> :-  Indian<br>
+						<b>Languages Known</b> :- English, Hindi, and Gujarati<br>
+						<b>Hobbies</b> :-  Listening to Music, Playing video games, watching movie and Table-Tennis<br>
+
+					</li>
+				</ul>
+				<div class="skills-bar">
+					
+					<p>HTML5 / CSS3 / Bootstrap</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					<p>JavaScript</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					<p>ReactJS</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 75%;">75%</div>
+					</div>
+					<p>React Native</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 85%;">85%</div>
+					</div>
+					<p>Redux</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">70%</div>
+					</div>
+					<p>Flutter</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 70%;">70%</div>
+					</div>
+					<p>Wordpress</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!---------------------- Social Icon --------------------->
+
+<div class="social-icon">
+	<ul>
+		<a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
+		<a href="https://github.com/SANJAY-MISTRY" target="_blank"><li><i class="fa fa-github"></i></li></a>
+		<!--<a href="#" target="_blank"><li><i class="fa fa-google-wallet"></i></li></a>-->
+		<!--<a href="#" target="_blank"><li><i class="fa fa-maxcdn"></i></li></a>-->
+		<!-- <a href="https://www.instagram.com/sanjay_sharma4497/" target="_blank"><li><i class="fa fa-instagram"></i></li></a> -->
+		<!-- <a href="https://www.facebook.com/sanjay.mistry.3388/" target="_blank"><li><i class="fa fa-facebook"></i></li></a> -->
+	</ul>
+</div>
+
+
+
+
+
+<!-------------------------- Services --------------------------->
+
+
+
+ <div class="services" id="services">
+	<div class="container">
+
+		<h1 class="text-center">Technical Skills</h1>
+		<!-- <p class="text-center">Follow my Linkdin account.<br> And check My Some Projects </p> -->
+		<!-- <h1 class="text-center">Technical Skills</h1> -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>LANGUAGES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>BOOTSTRAP</li>
+						<li>JavaScript</li>
+						<li>ReactJS</li>
+						<li>Redux / Redux-Saga</li>
+						<li>React Native</li>
+						<li>Basic of Flutter</li>
+
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>DATABASES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>MySQL</li>
+					</ol>	
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>TOOLS/FRAMWORKS</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>Photoshop</li>
+						<li>WordPress</li>
+						<li>Mobirise</li>
+						<li>Adobe XD</li>
+						<li>Github</li>
+						<li>Android Studio</li>
+						<li>Visual Studio and Visual Studio Code</li>
+						<li>Sublime, Notepad++</li>
+
+					</ol>
+
+				</div>
+
+			</div>
+			<!-- <h1 class="text-center">Work Experience</h1> -->
+			
+			<!-- <div class="row">
+
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>Graphics</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>Development</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>Graphics</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+		</div> -->
+		
+		</div>
+	</div>
+</div> 
+
+
+
+
+
+
+
+<!----------------------Resume------------------------->
+
+
+<div class="resume" id="resume">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="text-center">My Experience</h1>
+				<ul class="timeline">
+					<li>
+						
+						<h4><span> 2021 - </span>React Native Developer</h4>
+						<!-- <p>Working on React Native Application and Flutter for Both Android And iOS also</p> -->
+						<b>Company </b> - SpurTree Technologies<br>
+						<b>Duration</b> - March 2022 - Present<br>
+						<b>Location</b> - Bangalore, Karnataka<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2021 - </span>React Native Developer</h4>
+						<!-- <p>Worked on React Native Application</p> -->
+						<b>Company </b> - Chirpn IT Solution<br>
+						<b>Duration</b> - May 2021 - March 2022<br>
+						<b>Location</b> - Pune, Maharastra<br>
+
+					</li>
+					
+					<li>
+						
+						<h4><span> 2021 - </span>Frontend Developer</h4>
+						<!-- <p>Worked On Web applications Using ReactJs and Worked On React native Application and little bit work on Flutter</p> -->
+						<b>Company </b> - First Floor Digital Agency<br>
+						<b>Duration</b> - Jan 2021 - May 2021<br>
+						<b>Location</b> - Mysore, Karnataka<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2020 - </span>Frontend Developer</h4>
+						<!-- <p>Worked on Wordpress Websites and Static Websites</p> -->
+						<b>Company </b> - The Alpha Team<br>
+						<b>Duration</b> - 7 months [ (26 May 2020) to (17 Dec 2020)]<br>
+						<b>Location</b> - BTM 2nd Stage, Bangalore<br>
+
+					</li>
+					
+					<!-- <li>
+						
+						<h4><span>2020 - </span>Frontend Developer</h4>
+						<p>Write any text here</p>
+						<b>Company </b> - CS Tech Info-Solution pvt. ltd<br>
+						<b>Duration</b> - 6 month [ (6 Jan 2020) to Current I Working]<br>
+						<b>Location</b> - Bangalore, Madhevpura<br>
+
+					</li> -->
+
+				</ul>
+			</div>
+
+			<div class="col-md-6">
+				<h1 class="text-center">My Eduction</h1>
+				<ul class="timeline">
+					<li>
+						
+						<h4><span> 2019 - </span>Bachelor Of Engineering</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
+						<b>University </b> - Gujarat Technological University<br>
+						<b>Session</b> - 2016 to 2019<br>
+						<b>Aggregate</b> - 6.7 CGPA<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2016 - </span>Diploma Engineering</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
+						<b>University </b> - Gujarat Technological University<br>
+						<b>Session</b> - 2013 to 2016<br>
+						<b>Aggregate</b> - 7.5 CGPA<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2013 - </span>High School (10th)</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute / School </b> - BCJ High School Jalundh<br>
+						<b>Board </b> - Gujarat Secondary and Higher Secondary Education Board<br>
+						<b>Session</b> - 2012 to 2013<br>
+						<b>Aggregate</b> - 74.5 % <br>
+
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<!----------------------Work Experience-------------------->
+
+
+
+
+ <div class="services" id="Experience">
+	<div class="container">
+
+		<h1 class="text-center">Work Experience</h1>
+		<p class="text-center">I have total 3 Year Of Experience as A Software Developer (React Native, ReactJS and Flutter (Android & iOS both)). I worked On ReactJS Projects, React native and Flutter Application.</p>
+		<!-- <h1 class="text-center">Technical Skills</h1> -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>STATIC WEBSITES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li><a href="http://foreignedge.in">foreignedge.in</a></li>
+						<li><a href="https://www.arrayz.com">www.arrayz.com</a></li>
+						<li><a href="http://adarshdeveloper.co.in/greens/">adarshdeveloper.co.in</a></li>
+						<li><a href="https://pristineandaman.com/honeymoon/">pristineandaman.com</a></li>
+						<li><a href="http://foreignedge.in">shapoorjipallonjibuilders.com</a></li>
+						<!-- <li><a href="http://foreignedge.in">PHP</a></li>
+						<li><a href="http://foreignedge.in">Basic Of React Native</a> </li> -->
+
+					</ol>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>WORDPRESS WEBSITE</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li><a href="https://www.shobhanihalani.com">shobhanihalani.com</a></li>
+						<li><a href="http://foreignedge.in">mindscan.edu.in</a></li>
+						<li><a href="http://skillhirer.com/ ">skillhirer.com</a></li>
+						<li><a href="https://gulachi.com/">gulachi.com</a></li>
+						<li><a href="https://pristineandaman.com/">pristineandaman.com</a></li>
+						<li><a href="http://chamaravajra.com/">chamaravajra.com</a></li>
+						<!-- <li><a href="http://foreignedge.in">Sublime, Notepad++</a></li> -->
+
+					</ol>
+
+				</div>
+
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>DYNAMIC Website</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>I Created a Ecommerce Website  Using ReactJS </li>
+						<li>I Created a Food Delivery App Using React Native </li>
+						<li>Worked on React native project (worked on Sportly.me)</li>
+						<li>Worked on React native project<a href="https://play.google.com/store/apps/details?id=com.sparqatar&pli=1">(Spar Qatar)</a></li>
+						<li>Working on Flutter project</li>
+					</ol>	
+				</div>
+			</div>
+			</div>
+	</div>
+</div> 
+
+
+
+<!---------------------- Contact -------------------->
+
+
+<div class="contact" id="contact">
+	<div class="container text-center">
+		<h1>Contact Me</h1>
+		<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and <br>scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p> -->
+				<div class="row">
+					<div class="col-md-4">
+						<i class="fa fa-phone"></i>
+						<h2>Mobile No</h2>
+						<a href="tel:8200209808" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 8200209808</p></a><!-- 
+						<a href="tel:9157858646" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 9157858646</p></a> -->
+					</div>
+					<div class="col-md-4">
+						<i class="fa fa-envelope"></i>
+						<h2>Email Id</h2>
+						<p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
+
+
+
+					</div>
+					<div class="col-md-4">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<h2>Address</h2>
+						<p><a href="#">No.05 Ground Floor, Seeliyammal Lane Muregespalya, Bangalore </a></p>
+
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary"><a href="https://docs.google.com/document/d/1YgVd7odZpfbw9saZENteE4dr6ElloatjN1e6974O1-U/edit?usp=sharing" target="_blank"><i class="fa fa-download"></i>Resume</a></button>
+				<button type="button" class="btn btn-primary"><a href="#"><i class="fa fa-rocket"></i>Here Me</a></button>
+
+	</div>
+	<div class="footer text-center">
+		<h5>Made <i class="fa fa-heart-o"></i> By Sanjay Mistry </h5>
+	</div>
+</div>
+
+
+</section>
+
+
+<!--------------Smooth Scroll--------------->
+<script src="smooth-scroll.js"></script>
+
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
 
 </body>
 </html>
