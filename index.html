@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfDz2htPH0lsSS5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
@@ -20,9 +20,9 @@
 </head>
 <body>
 
-<section id="header">
+<section id="header" class="d-flex align-items-center justify-content-center">
     <div class="container text-center">
-        <div class="user-box" data-aos="fade-down">
+        <div class="user-box" data-aos="fade-down" data-aos-duration="1000">
             <img src="img/sanjaynew.jpeg" alt="Sanjay Mistry Profile Picture">
             <h1>Sanjay Mistry</h1>
             <h5>Frontend Developer</h5>
@@ -71,12 +71,12 @@
     </div>
 
     <div class="about container" id="about">
-        <div class="row">
-            <div class="col-md-5 text-center" data-aos="fade-right">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center" data-aos="fade-right" data-aos-duration="1000">
                 <img src="img/sanjaynew.jpeg" class="profile-img" alt="Sanjay Mistry Profile">
             </div>
-            <div class="col-md-7" class="mydata" data-aos="fade-left">
-                <h3 style="color:gold">SANJAY MISTRY</h3>
+            <div class="col-md-7" class="mydata" data-aos="fade-left" data-aos-duration="1000">
+                <h3 class="section-title">SANJAY MISTRY</h3>
                 <p>Experienced Frontend Developer with 4+ years specializing in React Native and ReactJS, NextJS with proven expertise in cross-platform mobile app development for iOS and Android. Adept at delivering high-performance applications, including managing CI/CD pipelines. Seeking to leverage expertise in frontend technologies to drive impactful user experiences.</p>
                 <ul class="timeline1">
                     <li>
@@ -94,18 +94,18 @@
 
     <div class="social-icon">
         <ul>
-            <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
-            <a href="https://github.com/SANJAY-MISTRY" target="_blank"><li><i class="fa fa-github"></i></li></a>
+            <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank" data-aos="zoom-in" data-aos-delay="100"><li><i class="fa fa-linkedin"></i></li></a>
+            <a href="https://github.com/SANJAY-MISTRY" target="_blank" data-aos="zoom-in" data-aos-delay="200"><li><i class="fa fa-github"></i></li></a>
         </ul>
     </div>
 
     <div class="skills" id="skills">
         <div class="container">
-            <h1 class="text-center">Technical Skills</h1>
+            <h1 class="text-center section-title" data-aos="fade-up">Technical Skills</h1>
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="skills-box">
-                        <i class="fa fa-language"></i><span>LANGUAGES & FRAMEWORKS</span>
+                        <i class="fa fa-code"></i><span>LANGUAGES & FRAMEWORKS</span>
                         <ul>
                             <li>React Native</li>
                             <li>ReactJS</li>
@@ -118,7 +118,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="skills-box">
                         <i class="fa fa-database"></i><span>DATABASES & APIs</span>
                         <ul>
@@ -128,9 +128,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="skills-box">
-                        <i class="fa fa-cogs"></i><span>TOOLS & PLATFORMS</span>
+                        <i class="fa fa-wrench"></i><span>TOOLS & PLATFORMS</span>
                         <ul>
                             <li>Git</li>
                             <li>Bitbucket</li>
@@ -150,8 +150,8 @@
     <div class="resume" id="resume">
         <div class="container">
             <div class="row">
-                <div class="col-md-6" data-aos="fade-right">
-                    <h1 class="text-center">My Experience</h1>
+                <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-center section-title">My Experience</h1>
                     <ul class="timeline">
                         <li>
                             <h4><span>March 2022 - Present </span>Software Developer (B3)</h4>
@@ -192,8 +192,8 @@
                     </ul>
                 </div>
 
-                <div class="col-md-6" data-aos="fade-left">
-                    <h1 class="text-center">My Education</h1>
+                <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                    <h1 class="text-center section-title">My Education</h1>
                     <ul class="timeline">
                         <li>
                             <h4><span>2016 to 2019 </span>Bachelor of Engineering (B.Tech/B.E)</h4>
@@ -218,30 +218,30 @@
 
     <div class="contact" id="contact">
         <div class="container text-center">
-            <h1>Contact Me</h1>
+            <h1 class="section-title" data-aos="fade-up">Contact Me</h1>
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <i class="fa fa-phone"></i>
                     <h2>Mobile No</h2>
                     <a href="tel:8200209808" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 8200209808</p></a>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <i class="fa fa-envelope"></i>
                     <h2>Email Id</h2>
                     <p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <h2>Address</h2>
                     <p><a href="#">Indiranagar. Bangalore, 560008</a></p>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" data-aos="zoom-in">
+            <button type="button" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="400">
                 <a href="https://drive.google.com/file/d/1m8_Eh8q5gqKrd_YmZpEIsYIH9JfFWegA/view?usp=sharing" target="_blank">
                     <i class="fa fa-download"></i>Resume
                 </a>
             </button>
-            <button type="button" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="100">
+            <button type="button" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="500">
                 <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank">
                     <i class="fa fa-rocket"></i>Hire Me
                 </a>
