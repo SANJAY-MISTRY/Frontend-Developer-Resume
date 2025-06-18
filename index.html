@@ -1,479 +1,565 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Sanjay Resume</title>
+	<title>Sanjay Mistry - Software Developer</title>
 	<meta charset="UTF-8">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  	<link rel="stylesheet" type="text/css" href="style.css">
+  	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        /* General Body Styles */
+        body {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        /* --- Header Section --- */
+        #header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .user-box {
+            text-align: center;
+        }
+        .user-box img {
+            height: 180px;
+            width: 180px;
+            border-radius: 50%;
+            border: 5px solid gold;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease-in-out;
+        }
+        .user-box img:hover {
+            transform: scale(1.05);
+        }
+        .user-box h1 {
+            margin-top: 20px;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .user-box h5 {
+            color: gold;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
 
-	<!-- JS, Popper.js, and jQuery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        /* --- Navigation Bar --- */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-item.active .nav-link {
+            color: gold !important;
+        }
+        .navbar-toggler {
+            border-color: gold;
+        }
+        .fa-bars {
+            color: gold;
+        }
+        
+        /* --- General Section Styling --- */
+        section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        /* --- About Section --- */
+        .about {
+            background: #222;
+        }
+        .profile-img {
+            height: 350px;
+            width: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.4s ease;
+        }
+        .profile-img:hover {
+            transform: translateY(-10px);
+        }
+        .about h3 {
+            color: gold;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .about p {
+            line-height: 1.8;
+            color: #ccc;
+        }
+        
+        /* --- Expertise Section --- */
+        #expertise {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+        #expertise h1 {
+            color: #fff;
+            margin-bottom: 50px;
+        }
+        .expertise-box {
+            background: #252525;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .expertise-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(218,165,32,0.2);
+        }
+        .expertise-box i {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 20px;
+        }
+        .expertise-box h4 {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .expertise-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .expertise-box li {
+            background: #333;
+            color: #ddd;
+            padding: 8px 15px;
+            margin: 5px 0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* --- Resume (Experience & Education) Section --- */
+        .resume {
+            background: #222;
+        }
+        .resume h1 {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: gold;
+        }
+        .timeline li {
+            margin-bottom: 40px;
+            padding-left: 50px;
+            position: relative;
+        }
+        .timeline li:before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 4px solid gold;
+        }
+        .timeline h4 {
+            color: gold;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .timeline h4 span {
+            color: #ccc;
+            font-weight: normal;
+            font-size: 1rem;
+        }
+        .timeline p {
+            color: #bbb;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+        .timeline b {
+            color: #f0f0f0;
+        }
+        .tech-stack {
+            margin-top: 10px;
+        }
+        .tech-stack span {
+            background: #333;
+            color: #ddd;
+            padding: 5px 12px;
+            margin: 5px 5px 5px 0;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        /* --- Social Icons --- */
+        .social-icon {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        .social-icon ul {
+            list-style: none;
+            padding: 0;
+        }
+        .social-icon li {
+            background: gold;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 5px 0;
+            border-radius: 0 5px 5px 0;
+            transition: all 0.4s ease;
+        }
+        .social-icon li:hover {
+            background: #fff;
+            width: 50px;
+        }
+        .social-icon li i {
+            color: #111;
+            font-size: 20px;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            background: #1a1a1a;
+        }
+        .contact h1 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .contact i {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 20px;
+        }
+        .contact h2 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .contact p a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact p a:hover {
+            color: gold;
+        }
+        .contact .btn {
+            background: gold;
+            color: #111;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            margin: 10px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        .contact .btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(218,165,32,0.3);
+        }
+        .contact .btn a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background: #111;
+            padding: 20px 0;
+            color: #888;
+        }
+        .footer .fa-heart-o {
+            color: gold;
+        }
+
+    </style>
   	<link rel="icon" href="img/fevicon.jpg" type="image/jpg">
-
-
 </head>
 <body>
 	
-<section id="header">
-	
-	<div class="container text-center">
-		<!-- <div class="img-logo">
-			<img  src="img/logo.jpg">
-		</div> -->
-		
-		<div class="user-box">
-			<img src="img/sanjaynew.jpeg">
-			<h1>Sanjay Mistry</h1>
-			<h5>Frontend Developer</h5>
-		</div>
-	</div>
-	<div class="scroll-btn">
-		<div class="scroll-bar"><a href="#about"><span> </span></a>
-		</div>
-	</div>
-</section>
-<!------------------User Info Section----------------->
+<header id="header">
+    <div class="container text-center">
+        <div class="user-box">
+            <img src="img/sanjaynew.jpeg" alt="Sanjay Mistry">
+            <h1>SANJAY MISTRY</h1>
+            <h5>Software Developer (B3)</h5>
+        </div>
+    </div>
+</header>
 
-<section id="user-info">
+<main id="user-info">
 	<div class="nav-bar">
 		<nav class="navbar navbar-expand-lg">
-		  <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+		  <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="Logo"></a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <i class="fa fa-bars"></i>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav ml-auto">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="#top">HOME </span></a>
+		        <a class="nav-link" href="#header">HOME</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#about">ABOUT ME</a>
+		      </li>
+              <li class="nav-item">
+		        <a class="nav-link" href="#expertise">EXPERTISE</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#resume">RESUME</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#services" tabindex="-1" aria-disabled="true">SKILLS</a>
-		      </li>
-		       <li class="nav-item">
-		        <a class="nav-link" href="#Experience" tabindex="-1" aria-disabled="true">EXPERIENCE</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#contact" tabindex="-1" aria-disabled="true">CONTACT</a>
+		        <a class="nav-link" href="#contact">CONTACT</a>
 		      </li>
 		    </ul>
 		  </div>
-
 		</nav>
-		<div class="view_port">
-  <div class="polling_message">
-  </div>
-  <div class="cylon_eye"></div>
-
-</div>
-
 	</div>
 
+	<div class="social-icon">
+        <ul>
+            <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
+            <a href="https://github.com/SANJAY-MISTRY" target="_blank"><li><i class="fa fa-github"></i></li></a>
+        </ul>
+    </div>
 
-
-
-	<!------- About--------->
-
-	<div class="about container" id="about">
-		<div class="row">
+	<section class="about container" id="about">
+		<div class="row align-items-center">
 			<div class="col-md-5 text-center">
-				<img src="img/sanjaynew.jpeg" class="profile-img">
-				
+				<img src="img/sanjaynew.jpeg" class="profile-img" alt="Sanjay Mistry Profile">
 			</div>
-			<div class="col-md-7" class="mydata">
-				<h3 style="color:gold">SANJAY MISTRY</h3>
-				<!-- <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book</p> -->
-				<ul class="timeline1">
-					<li>
-						
-						<h4><!-- <span> 2019 - </span> -->Personal Profile</h4>
-						<!-- <p>Write any text here</p> -->
-						<b>DOB </b> :- JULY 04, 1997<br>
-						<b>Father’s Name </b> :- Yashwantbhai Mistry<br>
-						<b>Nationality</b> :-  Indian<br>
-						<b>Languages Known</b> :- English, Hindi, and Gujarati<br>
-						<b>Hobbies</b> :-  Listening to Music, Playing video games, watching movie and Table-Tennis<br>
+			<div class="col-md-7">
+				<h3>ABOUT ME</h3>
+				<p>
+                    Experienced Frontend Developer with 4+ years specializing in React Native and ReactJS, NextJS with proven expertise in cross-platform mobile app development for iOS and Android. Adept at delivering high-performance applications, including managing CI/CD pipelines. Seeking to leverage expertise in frontend technologies to drive impactful user experiences.
+                </p>
+                <br>
+                <p><b>LANGUAGES KNOWN:</b> English, Hindi, and Gujarati</p>
+			</div>
+		</div>
+	</section>
 
-					</li>
-				</ul>
-				<div class="skills-bar">
-					
-					<p>HTML5 / CSS3 / Bootstrap</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 80%;">80%</div>
-					</div>
-					<p>JavaScript</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 80%;">80%</div>
-					</div>
-					<p>ReactJS</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 75%;">75%</div>
-					</div>
-					<p>React Native</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 85%;">85%</div>
-					</div>
-					<p>Redux</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 80%;">70%</div>
-					</div>
-					<p>Flutter</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 70%;">70%</div>
-					</div>
-					<p>Wordpress</p>
-					<div class="progress">
-						<div class="progress-bar" style="width: 80%;">80%</div>
-					</div>
-					
+    <section id="expertise">
+        <div class="container text-center">
+            <h1 class="text-center font-weight-bold">MY EXPERTISE</h1>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="expertise-box">
+                        <i class="fa fa-code"></i>
+                        <h4>Frontend</h4>
+                        <ul>
+                            <li>React Native</li>
+                            <li>ReactJS</li>
+                            <li>NextJS</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>HTML & CSS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="expertise-box">
+                        <i class="fa fa-mobile"></i>
+                        <h4>Mobile</h4>
+                        <ul>
+                            <li>iOS & Android</li>
+                            <li>Flutter</li>
+                            <li>Redux</li>
+                            <li>Redux Saga</li>
+                            <li>Redux Thunk</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="expertise-box">
+                        <i class="fa fa-cogs"></i>
+                        <h4>Tools & Platforms</h4>
+                        <ul>
+                            <li>Git & Bitbucket</li>
+                            <li>Jira</li>
+                            <li>Postman</li>
+                            <li>CI/CD</li>
+                            <li>GitHub Actions</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="expertise-box">
+                        <i class="fa fa-database"></i>
+                        <h4>Backend & APIs</h4>
+                        <ul>
+                            <li>REST APIs</li>
+                            <li>Firebase</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<div class="resume" id="resume">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="text-center">My Experience</h1>
+					<ul class="timeline">
+						<li>
+							<h4>Software Developer @ SpurTree Technologies <span>(March 2022 - Present)</span></h4>
+							<p><b>MoonLight Collective App:</b> Developed a cross-platform React Native app for users to explore local experiences and built a ReactJS admin panel for event management.</p>
+                            <p><b>MePrism App:</b> Led React Native app development for data privacy, enabling users to remove data from web services. Managed CI/CD pipelines, reducing deployment time by 50%.</p>
+                            <p><b>Bira91 Beast:</b> Currently leading a project using Salesforce React Native to enhance sales functionalities, implementing SmartStore and KYC features.</p>
+							<p><b>Traccar App:</b> Developed a Flutter project to enhance data visibility, including a read-only data display and an iOS Watch app feature.</p>
+						</li>
+						<li>
+							<h4>L1 Software Developer @ Chirpn IT Solutions <span>(Jun 2021 - Feb 2022)</span></h4>
+							<p><b>SPARQATAR (E-commerce):</b> Developed a React Native mobile app for a leading hypermarket, with bilingual support (English/Arabic) for a diverse user base.</p>
+							<p><b>ShopNow & Shimplinadhar:</b> Led end-to-end development of multiple e-commerce apps, focusing on responsive UI/UX and multi-language support.</p>
+                            <p><b>Sportly.Me:</b> Contributed to a React Native app for junior athletes, focusing on performance optimization and new feature development.</p>
+						</li>
+						<li>
+							<h4>Software Developer @ First Floor Digital Agency <span>(Dec 2020 - Jun 2021)</span></h4>
+							<p>Gained extensive hands-on experience with React Native, Flutter, and ReactJS. Contributed to multiple projects by leveraging these frameworks to build robust, cross-platform applications, laying a solid foundation for my professional growth.</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h1 class="text-center">My Education</h1>
+					<ul class="timeline">
+						<li>
+							<h4>Bachelor Of Engineering (B.E/B.Tech) <span>(2016 - 2019)</span></h4>
+							<b>Institute:</b> Ipcowala Institute of Engineering & Technology<br>
+							<b>University:</b> Gujarat Technological University (GTU)<br>
+						</li>
+						<li>
+							<h4>Diploma in Engineering <span>(2013 - 2016)</span></h4>
+							<b>Institute:</b> Ipcowala Institute of Engineering & Technology<br>
+							<b>University:</b> Gujarat Technological University (GTU)<br>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-
-
-
-<!---------------------- Social Icon --------------------->
-
-<div class="social-icon">
-	<ul>
-		<a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
-		<a href="https://github.com/SANJAY-MISTRY" target="_blank"><li><i class="fa fa-github"></i></li></a>
-		<!--<a href="#" target="_blank"><li><i class="fa fa-google-wallet"></i></li></a>-->
-		<!--<a href="#" target="_blank"><li><i class="fa fa-maxcdn"></i></li></a>-->
-		<!-- <a href="https://www.instagram.com/sanjay_sharma4497/" target="_blank"><li><i class="fa fa-instagram"></i></li></a> -->
-		<!-- <a href="https://www.facebook.com/sanjay.mistry.3388/" target="_blank"><li><i class="fa fa-facebook"></i></li></a> -->
-	</ul>
-</div>
-
-
-
-
-
-<!-------------------------- Services --------------------------->
-
-
-
- <div class="services" id="services">
-	<div class="container">
-
-		<h1 class="text-center">Technical Skills</h1>
-		<!-- <p class="text-center">Follow my Linkdin account.<br> And check My Some Projects </p> -->
-		<!-- <h1 class="text-center">Technical Skills</h1> -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-rocket"></i><span>LANGUAGES</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li>HTML5</li>
-						<li>CSS3</li>
-						<li>BOOTSTRAP</li>
-						<li>JavaScript</li>
-						<li>ReactJS</li>
-						<li>Redux / Redux-Saga</li>
-						<li>React Native</li>
-						<li>Basic of Flutter</li>
-
-					</ol>
+	<div class="contact" id="contact">
+		<div class="container text-center">
+			<h1>Contact Me</h1>
+			<div class="row">
+				<div class="col-md-4">
+					<i class="fa fa-phone"></i>
+					<h2>Mobile No</h2>
+					<p><a href="tel:8200209808">+91 8200209808</a></p>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-envelope"></i>
+					<h2>Email Id</h2>
+					<p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-map-marker"></i>
+					<h2>Address</h2>
+					<p><a href="#">Indiranagar, Bangalore - 560008</a></p>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-line-chart"></i><span>DATABASES</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li>MySQL</li>
-					</ol>	
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-laptop"></i><span>TOOLS/FRAMWORKS</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li>Photoshop</li>
-						<li>WordPress</li>
-						<li>Mobirise</li>
-						<li>Adobe XD</li>
-						<li>Github</li>
-						<li>Android Studio</li>
-						<li>Visual Studio and Visual Studio Code</li>
-						<li>Sublime, Notepad++</li>
-
-					</ol>
-
-				</div>
-
-			</div>
-			<!-- <h1 class="text-center">Work Experience</h1> -->
-			
-			<!-- <div class="row">
-
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-rocket"></i><span>Graphics</span>
-					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-line-chart"></i><span>Development</span>
-					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-laptop"></i><span>Graphics</span>
-					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
-				</div>
-			</div>
-		</div> -->
-		
+            <button type="button" class="btn"><a href="https://drive.google.com/file/d/1m8_Eh8q5gqKrd_YmZpEIsYIH9JfFWegA/view?usp=sharing" target="_blank"><i class="fa fa-download"></i> Download Resume</a></button>
+			<button type="button" class="btn"><a href="mailto:smistry6518@gmail.com"><i class="fa fa-paper-plane"></i> Get in Touch</a></button>
+		</div>
+		<div class="footer text-center">
+			<h5>Made with <i class="fa fa-heart-o"></i> by Sanjay Mistry</h5>
 		</div>
 	</div>
-</div> 
+</main>
 
-
-
-
-
-
-
-<!----------------------Resume------------------------->
-
-
-<div class="resume" id="resume">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h1 class="text-center">My Experience</h1>
-				<ul class="timeline">
-					<li>
-						
-						<h4><span> 2021 - </span>React Native Developer</h4>
-						<!-- <p>Working on React Native Application and Flutter for Both Android And iOS also</p> -->
-						<b>Company </b> - SpurTree Technologies<br>
-						<b>Duration</b> - March 2022 - Present<br>
-						<b>Location</b> - Bangalore, Karnataka<br>
-
-					</li>
-					<li>
-						
-						<h4><span> 2021 - </span>React Native Developer</h4>
-						<!-- <p>Worked on React Native Application</p> -->
-						<b>Company </b> - Chirpn IT Solution<br>
-						<b>Duration</b> - May 2021 - March 2022<br>
-						<b>Location</b> - Pune, Maharastra<br>
-
-					</li>
-					
-					<li>
-						
-						<h4><span> 2021 - </span>Frontend Developer</h4>
-						<!-- <p>Worked On Web applications Using ReactJs and Worked On React native Application and little bit work on Flutter</p> -->
-						<b>Company </b> - First Floor Digital Agency<br>
-						<b>Duration</b> - Jan 2021 - May 2021<br>
-						<b>Location</b> - Mysore, Karnataka<br>
-
-					</li>
-					<li>
-						
-						<h4><span> 2020 - </span>Frontend Developer</h4>
-						<!-- <p>Worked on Wordpress Websites and Static Websites</p> -->
-						<b>Company </b> - The Alpha Team<br>
-						<b>Duration</b> - 7 months [ (26 May 2020) to (17 Dec 2020)]<br>
-						<b>Location</b> - BTM 2nd Stage, Bangalore<br>
-
-					</li>
-					
-					<!-- <li>
-						
-						<h4><span>2020 - </span>Frontend Developer</h4>
-						<p>Write any text here</p>
-						<b>Company </b> - CS Tech Info-Solution pvt. ltd<br>
-						<b>Duration</b> - 6 month [ (6 Jan 2020) to Current I Working]<br>
-						<b>Location</b> - Bangalore, Madhevpura<br>
-
-					</li> -->
-
-				</ul>
-			</div>
-
-			<div class="col-md-6">
-				<h1 class="text-center">My Eduction</h1>
-				<ul class="timeline">
-					<li>
-						
-						<h4><span> 2019 - </span>Bachelor Of Engineering</h4>
-						<!-- <p>Write any text here</p> -->
-						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
-						<b>University </b> - Gujarat Technological University<br>
-						<b>Session</b> - 2016 to 2019<br>
-						<b>Aggregate</b> - 6.7 CGPA<br>
-
-					</li>
-					<li>
-						
-						<h4><span> 2016 - </span>Diploma Engineering</h4>
-						<!-- <p>Write any text here</p> -->
-						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
-						<b>University </b> - Gujarat Technological University<br>
-						<b>Session</b> - 2013 to 2016<br>
-						<b>Aggregate</b> - 7.5 CGPA<br>
-
-					</li>
-					<li>
-						
-						<h4><span> 2013 - </span>High School (10th)</h4>
-						<!-- <p>Write any text here</p> -->
-						<b>Institute / School </b> - BCJ High School Jalundh<br>
-						<b>Board </b> - Gujarat Secondary and Higher Secondary Education Board<br>
-						<b>Session</b> - 2012 to 2013<br>
-						<b>Aggregate</b> - 74.5 % <br>
-
-					</li>
-
-				</ul>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-
-
-<!----------------------Work Experience-------------------->
-
-
-
-
- <div class="services" id="Experience">
-	<div class="container">
-
-		<h1 class="text-center">Work Experience</h1>
-		<p class="text-center">I have total 3 Year Of Experience as A Software Developer (React Native, ReactJS and Flutter (Android & iOS both)). I worked On ReactJS Projects, React native and Flutter Application.</p>
-		<!-- <h1 class="text-center">Technical Skills</h1> -->
-		<div class="row">
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-rocket"></i><span>STATIC WEBSITES</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li><a href="http://foreignedge.in">foreignedge.in</a></li>
-						<li><a href="https://www.arrayz.com">www.arrayz.com</a></li>
-						<li><a href="http://adarshdeveloper.co.in/greens/">adarshdeveloper.co.in</a></li>
-						<li><a href="https://pristineandaman.com/honeymoon/">pristineandaman.com</a></li>
-						<li><a href="http://foreignedge.in">shapoorjipallonjibuilders.com</a></li>
-						<!-- <li><a href="http://foreignedge.in">PHP</a></li>
-						<li><a href="http://foreignedge.in">Basic Of React Native</a> </li> -->
-
-					</ol>
-				</div>
-			</div>
-			
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-laptop"></i><span>WORDPRESS WEBSITE</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li><a href="https://www.shobhanihalani.com">shobhanihalani.com</a></li>
-						<li><a href="http://foreignedge.in">mindscan.edu.in</a></li>
-						<li><a href="http://skillhirer.com/ ">skillhirer.com</a></li>
-						<li><a href="https://gulachi.com/">gulachi.com</a></li>
-						<li><a href="https://pristineandaman.com/">pristineandaman.com</a></li>
-						<li><a href="http://chamaravajra.com/">chamaravajra.com</a></li>
-						<!-- <li><a href="http://foreignedge.in">Sublime, Notepad++</a></li> -->
-
-					</ol>
-
-				</div>
-
-			</div>
-			<div class="col-md-4">
-				<div class="services-box">
-					<i class="fa fa-line-chart"></i><span>DYNAMIC Website</span>
-					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
-					<ol>
-						<li>I Created a Ecommerce Website  Using ReactJS </li>
-						<li>I Created a Food Delivery App Using React Native </li>
-						<li>Worked on React native project (worked on Sportly.me)</li>
-						<li>Worked on React native project<a href="https://play.google.com/store/apps/details?id=com.sparqatar&pli=1">(Spar Qatar)</a></li>
-						<li>Working on Flutter project</li>
-					</ol>	
-				</div>
-			</div>
-			</div>
-	</div>
-</div> 
-
-
-
-<!---------------------- Contact -------------------->
-
-
-<div class="contact" id="contact">
-	<div class="container text-center">
-		<h1>Contact Me</h1>
-		<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and <br>scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p> -->
-				<div class="row">
-					<div class="col-md-4">
-						<i class="fa fa-phone"></i>
-						<h2>Mobile No</h2>
-						<a href="tel:8200209808" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 8200209808</p></a><!-- 
-						<a href="tel:9157858646" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 9157858646</p></a> -->
-					</div>
-					<div class="col-md-4">
-						<i class="fa fa-envelope"></i>
-						<h2>Email Id</h2>
-						<p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
-
-
-
-					</div>
-					<div class="col-md-4">
-						<i class="fa fa-map-marker" aria-hidden="true"></i>
-						<h2>Address</h2>
-						<p><a href="#">No.05 Ground Floor, Seeliyammal Lane Muregespalya, Bangalore </a></p>
-
-					</div>
-				</div>
-				<button type="button" class="btn btn-primary"><a href="https://drive.google.com/file/d/1m8_Eh8q5gqKrd_YmZpEIsYIH9JfFWegA/view?usp=sharing" target="_blank"><i class="fa fa-download"></i>Resume</a></button>
-				<button type="button" class="btn btn-primary"><a href="#"><i class="fa fa-rocket"></i>Here Me</a></button>
-
-	</div>
-	<div class="footer text-center">
-		<h5>Made <i class="fa fa-heart-o"></i> By Sanjay Mistry </h5>
-	</div>
-</div>
-
-
-</section>
-
-
-<!--------------Smooth Scroll--------------->
-<script src="smooth-scroll.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <script>
-	var scroll = new SmoothScroll('a[href*="#"]');
-</script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 
+    // Fade-in animation on scroll
+    const sections = document.querySelectorAll('section');
+    const options = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px"
+    };
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+</script>
 
 </body>
 </html>
