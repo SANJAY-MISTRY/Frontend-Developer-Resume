@@ -1,374 +1,378 @@
-body{
-	margin: 0;
-	padding:0;
-	font-family: sans-serif;
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Choose a modern font */
+    background-color: #f8f9fa; /* Light background */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
-/*------------Header CSS--------------*/
-#header{
-	height:100vh;
-	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(img/gallery03.jpg);
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
+
+/* Header Section */
+#header {
+    background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
 }
-.user-box{
-	top: 50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-	position: absolute;
+
+.user-box {
+    animation: fadeInDown 1s ease-out; /* Example animation */
 }
-.img-logo{
-	align-items: left;		
-}
+
 .user-box img {
-	border-radius: 50%;
-	width: 250px;
-	border: 5px solid #fff;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    animation: zoomIn 1s ease-out;
 }
-.user-box img:hover {
-	border-radius: 50%;
-	width: 300px;
-	border: 5px solid #fff;
-}
-.user-box h1{
-	color: #fff;
-	font-weight: bold;
-	margin: 10px;
 
+h1, h5 {
+    margin-top: 15px;
+    font-weight: bold;
 }
-.user-box h5 {
-	color: #fff;
+
+/* Scroll Button Animation */
+.scroll-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
 }
-.scroll-btn{
-	bottom: 10px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 3px solid #fff;
-	padding: 10px 15px 30px;
-	border-radius: 30px;
+
+.scroll-bar {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 2s infinite;
 }
+
 .scroll-bar span {
-	border: 4px solid #fff;
-	font-size: 15px;
-	border-radius: 30px;
-}
-.scroll-bar{
-	animation: mover 1s infinite alternate;
-}
-
-
-
-.polling_message {
-  color: white;
-  float: left;
-  margin-right: 2%;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #343a40; /* Darker fixed navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand img {
+    height: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: gold !important; /* Highlight on hover */
+}
+
+/* Cylon Eye Animation (as provided in HTML) */
 .view_port {
-  background-color: black;
-  height: 25px;
-  width: 100%;
-  overflow: hidden;
-}
-.cylon_eye {
-  background-color: red;
-  background-image: linear-gradient(to right,
-      rgba(0, 0, 0, .9) 25%,
-      rgba(0, 0, 0, .1) 50%,
-      rgba(0, 0, 0, .9) 75%);
-  color: white;
-  height: 100%;
-  width: 40%;
-
-  -webkit-animation: 5s linear 0s infinite alternate move_eye;
-          animation: 5s linear 0s infinite alternate move_eye;
+    /* Styles for the view_port and cylon_eye go here */
+    /* This will depend on how you want the animation to look */
 }
 
-@-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
-        @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
-@keyframes mover {
-	0%{transform: translateY(0);}
-	100%{transform: translateY(15px);}
-}
-/*----------About----------*/
-
-.about{
-	padding-top: 100px;
-/* 	margin-bottom: -275px; */
-}
-.profile-img{
-	height: 400px;
-}
-.nav-bar{
-	top: 0;
-	position: sticky;
-	z-index: 2;
-
-}
-.navbar{
-	background-color: #000;
-}
-.navbar-brand img{
-	height: 50px;
-
-}
-.nav-bar .fa-bars{
-	font-size: 35px;
-	color: #fff;
-}
-.nav-bar-toggler{
-	outline: none !important; 
-}
-.navbar-nav{
-	float: centre;
-	text-align: center;
-}
-.nav-link{
-	color:#fff !important;
-}
-.skills-bar p{
-	margin-bottom: 6px;
-	font-weight: 700;
-}
-.progress {
-	border-radius: 16px !important;
-	margin-bottom: 10px;
-}
-.progress-bar{
-	border-radius: 16px;
-	background:#000 !important; 
-}
-
-/*------------resume------------*/
-.resume{
-	margin-top: -50px;
-	padding-bottom: 30px;
-	background:#f9f9f9;
-}
-.resume h1{
-	margin-bottom: 50px;
-	    margin-top: 30px;
-}
-.timeline{
-	list-style-type: none;
-	position: relative;
-}
-.timeline1{
-	list-style-type: none;
-	position: relative;
-	margin-left: -40px
-}
-.timeline:before{
-	content: '';
-	background:#000;
-	display: inline-block;
-	position: absolute;
-	left: 29px;
-	width: 2px;
-	height: 100%;
-	z-index: 1;
-}
-.timeline li{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 20px;
-	background:#fff;
-}
-.timeline h4{
-	background-color: #000;
-	padding: 5px 0 5px 20px;
-	color: #fff;
-	font-size: 15px; 
-}
-.timeline li h4 span {
-	font-weight: bold;
-	color: #ccc;
-}\
-.timeline1 li{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 20px;
-	background:#fff;
-}
-.timeline1 h4{
-	background-color: #000;
-	padding: 5px 0 5px 20px;
-	color: #fff;
-	font-size: 15px; 
-}
-.timeline1 li h4 span {
-	font-weight: bold;
-	color: #ccc;
-}
-.timeline li:before{
-	content: '';
-	background:#fff;
-	display: inline-block;
-	position: absolute;
-	border-radius: 50%;
-	border:3px solid #000;
-	width: 20px;
-	left: 20px;
-	height: 20px;
-	z-index: 1;
-}
-
-
-/*----------------Services--------------------*/
-
-.services{
-	padding-top: 50px;
-	padding-bottom: 125px;
-	background: lightgrey;
-}
-.services h1{
-	margin-bottom: 20px;
-}
-.services-box {
-	background:#f9f9f9;
-	padding:10px;
-	margin-top:20px;
-	border-top-right-radius: 50px;
-	border-bottom-left-radius: 50px;
-}
-.services-box .fa{
-	margin:0 10px;
-	font-size: 25px;
-}
-.services-box span{
-	margin: 5px;
-	font-size: 20px;
-	font-weight: bold;
-}
-.services-box p{
-	font-size: 15px;
-	margin-top: 20px;
-	color: #777;
-}
-.services-box:hover{
-	background:#000;
-	color: #fff;
-	border-top-right-radius: 0;
-	border-bottom-left-radius: 0;
-	border-top-left-radius: 50px;
-	border-bottom-right-radius: 50px;
-	transition: 1s;
-}
-.services-box:hover p {
-	color: #fff;
-}
-
-
-/*-------------------Contact---------------------*/
-
-.contact{
-	padding-top: 50px;
-	background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(img/background3.jpg);
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
-	color: #fff;
-}
-
-.contact .row{
-	padding: 30px 0;
-	font-size: 22px;
-}
-.contact .col-md-4 .fa{
-	padding: 10px;
-	font-size: 40px;
-}
-.contact .btn{
-	padding: 10px 25px 10px 25px;
-	margin:5px;
-	border-radius: 30px;
-	border: 3px solid #fff;
-	background:transparent;
-}
-.contact .btn:focus{
-	box-shadow: none !important;
-
-}
-.contact .btn:hover{
-	border: 3px solid #000;
-	background-color: #000 !important;
-	transition: 0.6s;
-}
-
-.contact .btn a{
-	color: #fff;
-	text-decoration: none;
-}
-.contact .btn .fa{
-	margin-right: 15px;
-}
-.contact .col-md-4 a{
-	color: #fff;
-}
-.footer{
-	background-color: #000;
-	height: 50px;
-	margin-top: 50px;
-	color: #fff;
-	padding-top: 10px
-}
-.fa-heart-o{
-	color: red;
-}
-/*--------------social-icon------------*/
-
-.social-icon{
-	top: 50%;
-	transform: translateY(-50%);
-	position: sticky;
-	z-index: 1;
-	width: 80px;
-}
-.social-icon ul{
-	padding: initial;
-}
-.social-icon ul li{
-	height: 60px;
-	width:60px;
-	list-style-type: none;
-	padding-left: 15px;
-	padding-top: 6px;
-	margin-top: 5px;
-	color: #fff;
-	background-color: #000;
-}
-.social-icon ul li:hover{
-	padding-left: 30px;
-	width: 120px;
-	transition:1s; 
-}
-.social-icon ul li .fa{
-	font-size: 30px;
-	padding-top: 5px;
-}
-
-@media only screen and (max-width: 600px) {
-	body{
-		overflow-x: hidden;
-	}
- 
- .social-icon ul li{
-	height: 30px;
-	padding-left: 8px;
-	padding-bottom: 5px;
-	padding-top: 2px;
-	width:30px;
-}
-.social-icon ul li .fa{
-	font-size: 15px;
-
-}
+/* About Section */
 .about {
-    padding-top: 60px;
-    margin-bottom: -130px;
+    padding: 80px 0;
 }
-.mydata{
-	text-align: center !important;
+
+.about h3 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid gold;
+    padding-bottom: 10px;
 }
+
+.about .profile-img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Timeline Styling (for About, Resume) */
+.timeline1, .timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.timeline1:before, .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #eee;
+    left: 8px; /* Adjust for padding */
+}
+
+.timeline1 li, .timeline li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.timeline1 li:before, .timeline li:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #007bff;
+    border-radius: 50%;
+    left: 0;
+    top: 5px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.timeline1 h4 span, .timeline h4 span {
+    color: #555;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+/* Skills Section */
+.skills {
+    background-color: #f1f1f1;
+    padding: 80px 0;
+}
+
+.skills h1 {
+    margin-bottom: 50px;
+    color: #007bff;
+}
+
+.skills-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.skills-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.skills-box .fa {
+    font-size: 40px;
+    color: gold;
+    margin-bottom: 15px;
+}
+
+.skills-box span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skills-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-box li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.skills-box li:last-child {
+    border-bottom: none;
+}
+
+
+/* Resume (Experience & Education) Section */
+.resume {
+    padding: 80px 0;
+}
+
+.resume h1 {
+    margin-bottom: 50px;
+    color: #007bff;
+}
+
+.resume ul.timeline p ul {
+    list-style: disc; /* Bullet points for responsibilities */
+    margin-top: 10px;
+    padding-left: 20px;
+    text-align: left;
+}
+.resume ul.timeline p ul li {
+    margin-bottom: 5px;
+    padding-left: 0; /* Remove extra padding from timeline li */
+    font-size: 0.95em;
+    border-bottom: none; /* No border for sub-list items */
+}
+.resume ul.timeline p {
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.contact h1 {
+    margin-bottom: 50px;
+}
+
+.contact .fa {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: gold;
+}
+
+.contact a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: gold;
+}
+
+.contact .btn-primary {
+    background-color: gold;
+    border-color: gold;
+    color: #333;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 20px 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact .btn-primary:hover {
+    background-color: #c7a700; /* Darker gold on hover */
+    border-color: #c7a700;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.contact .btn-primary a {
+    color: #333; /* Ensure text color is dark for contrast */
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.footer .fa-heart-o {
+    color: red;
+}
+
+/* Animations using AOS (if integrated) */
+[data-aos] {
+    transition-property: opacity, transform;
+}
+/* You'd have specific AOS styles if you customize them */
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .user-box h1 {
+        font-size: 2.5em;
+    }
+    .user-box h5 {
+        font-size: 1.2em;
+    }
+    .nav-bar .navbar-toggler {
+        display: block;
+    }
+    .nav-bar .navbar-collapse {
+        background-color: #343a40;
+        padding: 15px;
+    }
+    .nav-bar .navbar-nav .nav-link {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .about .col-md-5, .about .col-md-7 {
+        text-align: center;
+    }
+    .timeline1:before, .timeline:before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline1 li, .timeline li {
+        padding-left: 0;
+        text-align: center;
+    }
+    .timeline1 li:before, .timeline li:before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .skills-box, .contact .col-md-4 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Additional common animations you might want in style.css */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
