@@ -1,164 +1,479 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay Mistry - Frontend Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+	<title>Sanjay Resume</title>
+	<meta charset="UTF-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="icon" href="img/fevicon.jpg" type="image/jpg">
+
+
 </head>
 <body>
+	
+<section id="header">
+	
+	<div class="container text-center">
+		<!-- <div class="img-logo">
+			<img  src="img/logo.jpg">
+		</div> -->
+		
+		<div class="user-box">
+			<img src="img/sanjaynew.jpeg">
+			<h1>Sanjay Mistry</h1>
+			<h5>Frontend Developer</h5>
+		</div>
+	</div>
+	<div class="scroll-btn">
+		<div class="scroll-bar"><a href="#about"><span> </span></a>
+		</div>
+	</div>
+</section>
+<!------------------User Info Section----------------->
 
-    <header id="header">
-        <div class="header-content">
-            <img src="https://i.imgur.com/r6M1VAB.png" alt="Sanjay Mistry" class="profile-image">
-            <h1>SANJAY MISTRY</h1>
-            <p>Experienced Frontend Developer</p>
-        </div>
-        <a href="#about" class="scroll-down-arrow">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </header>
+<section id="user-info">
+	<div class="nav-bar">
+		<nav class="navbar navbar-expand-lg">
+		  <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		    <i class="fa fa-bars"></i>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNav">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#top">HOME </span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#about">ABOUT ME</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#resume">RESUME</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#services" tabindex="-1" aria-disabled="true">SKILLS</a>
+		      </li>
+		       <li class="nav-item">
+		        <a class="nav-link" href="#Experience" tabindex="-1" aria-disabled="true">EXPERIENCE</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#contact" tabindex="-1" aria-disabled="true">CONTACT</a>
+		      </li>
+		    </ul>
+		  </div>
 
-    <nav id="navbar">
-        <div class="container">
-            <a href="#" class="nav-logo">SM</a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+		</nav>
+		<div class="view_port">
+  <div class="polling_message">
+  </div>
+  <div class="cylon_eye"></div>
 
-    <main class="container">
-        <section id="about" class="animated-section">
-            <h2><i class="fas fa-user-tie"></i> About Me</h2>
-            <p>
-                Experienced Frontend Developer with 4+ years specializing in React Native and ReactJS, NextJS with proven expertise in cross-platform mobile app development for iOS and Android. Adept at delivering high-performance applications, including managing CI/CD pipelines. Seeking to leverage expertise in frontend technologies to drive impactful user experiences.
-            </p>
-        </section>
+</div>
 
-        <section id="expertise" class="animated-section">
-            <h2><i class="fas fa-cogs"></i> Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><i class="fas fa-code"></i> Frontend Development</h3>
-                    <ul>
-                        <li>React Native</li>
-                        <li>ReactJS</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>HTML, CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
-                    <ul>
-                        <li>React Native</li>
-                        <li>Flutter (iOS & Android)</li>
-                        <li>Redux (Saga, Thunk)</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
-                    <ul>
-                        <li>Git & Bitbucket</li>
-                        <li>Jira & Postman</li>
-                        <li>CI/CD (GitHub Actions)</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3><i class="fas fa-server"></i> Backend & APIs</h3>
-                    <ul>
-                        <li>REST APIs</li>
-                        <li>Firebase</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+	</div>
 
-        <section id="experience" class="animated-section">
-            <h2><i class="fas fa-briefcase"></i> Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Software Developer (B3)</h3>
-                        <p class="company">SpurTree Technologies - Bangalore</p>
-                        <p class="duration"><i class="far fa-calendar-alt"></i> March 2022 - Present</p>
-                        <ul>
-                            <li>Developed the MoonLight Collective cross-platform app using React Native.</li>
-                            <li>Built a ReactJS admin panel to manage community events.</li>
-                            <li>Managed CI/CD pipelines for the MePrism app, reducing deployment time by 50%.</li>
-                            <li>Leading the Bira91 Beast project using Salesforce React Native.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>L1 Software Developer</h3>
-                        <p class="company">Chirpn IT Solutions - Pune</p>
-                        <p class="duration"><i class="far fa-calendar-alt"></i> Jun 2021 - Feb 2022</p>
-                        <ul>
-                            <li>Contributed to the Sportly.Me React Native app for junior athletes.</li>
-                            <li>Developed the SPAR QATAR e-commerce app with bilingual support.</li>
-                            <li>Led end-to-end development of multiple e-commerce applications.</li>
-                        </ul>
-                    </div>
-                </div>
-                 <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Software Developer</h3>
-                        <p class="company">First Floor Digital Agency - Mysore</p>
-                        <p class="duration"><i class="far fa-calendar-alt"></i> Dec 2020 - Jun 2021</p>
-                        <ul>
-                            <li>Gained hands-on experience with React Native, Flutter, and ReactJS.</li>
-                            <li>Contributed to multiple projects building robust, cross-platform applications.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="education" class="animated-section">
-            <h2><i class="fas fa-user-graduate"></i> Education</h2>
-             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>B.Tech/B.E</h3>
-                        <p class="company">Gujarat Technological University (GTU)</p>
-                        <p class="duration"><i class="far fa-calendar-alt"></i> 2016 - 2019</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>Diploma</h3>
-                        <p class="company">Gujarat Technological University (GTU)</p>
-                        <p class="duration"><i class="far fa-calendar-alt"></i> 2013 - 2016</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="contact" class="animated-section">
-            <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
-            <div class="contact-info">
-                <a href="mailto:smistry6518@gmail.com"><i class="fas fa-envelope"></i> smistry6518@gmail.com</a>
-                <a href="tel:8200209808"><i class="fas fa-phone"></i> 8200209808</a>
-                <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>Designed & Built by Sanjay Mistry <i class="fas fa-heart"></i></p>
-        </div>
-    </footer>
+	<!------- About--------->
 
-    <script src="script.js"></script>
+	<div class="about container" id="about">
+		<div class="row">
+			<div class="col-md-5 text-center">
+				<img src="img/sanjaynew.jpeg" class="profile-img">
+				
+			</div>
+			<div class="col-md-7" class="mydata">
+				<h3 style="color:gold">SANJAY MISTRY</h3>
+				<!-- <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book</p> -->
+				<ul class="timeline1">
+					<li>
+						
+						<h4><!-- <span> 2019 - </span> -->Personal Profile</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>DOB </b> :- JULY 04, 1997<br>
+						<b>Father’s Name </b> :- Yashwantbhai Mistry<br>
+						<b>Nationality</b> :-  Indian<br>
+						<b>Languages Known</b> :- English, Hindi, and Gujarati<br>
+						<b>Hobbies</b> :-  Listening to Music, Playing video games, watching movie and Table-Tennis<br>
+
+					</li>
+				</ul>
+				<div class="skills-bar">
+					
+					<p>HTML5 / CSS3 / Bootstrap</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					<p>JavaScript</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					<p>ReactJS</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 75%;">75%</div>
+					</div>
+					<p>React Native</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 85%;">85%</div>
+					</div>
+					<p>Redux</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">70%</div>
+					</div>
+					<p>Flutter</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 70%;">70%</div>
+					</div>
+					<p>Wordpress</p>
+					<div class="progress">
+						<div class="progress-bar" style="width: 80%;">80%</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<!---------------------- Social Icon --------------------->
+
+<div class="social-icon">
+	<ul>
+		<a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><li><i class="fa fa-linkedin"></i></li></a>
+		<a href="https://github.com/SANJAY-MISTRY" target="_blank"><li><i class="fa fa-github"></i></li></a>
+		<!--<a href="#" target="_blank"><li><i class="fa fa-google-wallet"></i></li></a>-->
+		<!--<a href="#" target="_blank"><li><i class="fa fa-maxcdn"></i></li></a>-->
+		<!-- <a href="https://www.instagram.com/sanjay_sharma4497/" target="_blank"><li><i class="fa fa-instagram"></i></li></a> -->
+		<!-- <a href="https://www.facebook.com/sanjay.mistry.3388/" target="_blank"><li><i class="fa fa-facebook"></i></li></a> -->
+	</ul>
+</div>
+
+
+
+
+
+<!-------------------------- Services --------------------------->
+
+
+
+ <div class="services" id="services">
+	<div class="container">
+
+		<h1 class="text-center">Technical Skills</h1>
+		<!-- <p class="text-center">Follow my Linkdin account.<br> And check My Some Projects </p> -->
+		<!-- <h1 class="text-center">Technical Skills</h1> -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>LANGUAGES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>HTML5</li>
+						<li>CSS3</li>
+						<li>BOOTSTRAP</li>
+						<li>JavaScript</li>
+						<li>ReactJS</li>
+						<li>Redux / Redux-Saga</li>
+						<li>React Native</li>
+						<li>Basic of Flutter</li>
+
+					</ol>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>DATABASES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>MySQL</li>
+					</ol>	
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>TOOLS/FRAMWORKS</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>Photoshop</li>
+						<li>WordPress</li>
+						<li>Mobirise</li>
+						<li>Adobe XD</li>
+						<li>Github</li>
+						<li>Android Studio</li>
+						<li>Visual Studio and Visual Studio Code</li>
+						<li>Sublime, Notepad++</li>
+
+					</ol>
+
+				</div>
+
+			</div>
+			<!-- <h1 class="text-center">Work Experience</h1> -->
+			
+			<!-- <div class="row">
+
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>Graphics</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>Development</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>Graphics</span>
+					<p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p>
+				</div>
+			</div>
+		</div> -->
+		
+		</div>
+	</div>
+</div> 
+
+
+
+
+
+
+
+<!----------------------Resume------------------------->
+
+
+<div class="resume" id="resume">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="text-center">My Experience</h1>
+				<ul class="timeline">
+					<li>
+						
+						<h4><span> 2021 - </span>React Native Developer</h4>
+						<!-- <p>Working on React Native Application and Flutter for Both Android And iOS also</p> -->
+						<b>Company </b> - SpurTree Technologies<br>
+						<b>Duration</b> - March 2022 - Present<br>
+						<b>Location</b> - Bangalore, Karnataka<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2021 - </span>React Native Developer</h4>
+						<!-- <p>Worked on React Native Application</p> -->
+						<b>Company </b> - Chirpn IT Solution<br>
+						<b>Duration</b> - May 2021 - March 2022<br>
+						<b>Location</b> - Pune, Maharastra<br>
+
+					</li>
+					
+					<li>
+						
+						<h4><span> 2021 - </span>Frontend Developer</h4>
+						<!-- <p>Worked On Web applications Using ReactJs and Worked On React native Application and little bit work on Flutter</p> -->
+						<b>Company </b> - First Floor Digital Agency<br>
+						<b>Duration</b> - Jan 2021 - May 2021<br>
+						<b>Location</b> - Mysore, Karnataka<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2020 - </span>Frontend Developer</h4>
+						<!-- <p>Worked on Wordpress Websites and Static Websites</p> -->
+						<b>Company </b> - The Alpha Team<br>
+						<b>Duration</b> - 7 months [ (26 May 2020) to (17 Dec 2020)]<br>
+						<b>Location</b> - BTM 2nd Stage, Bangalore<br>
+
+					</li>
+					
+					<!-- <li>
+						
+						<h4><span>2020 - </span>Frontend Developer</h4>
+						<p>Write any text here</p>
+						<b>Company </b> - CS Tech Info-Solution pvt. ltd<br>
+						<b>Duration</b> - 6 month [ (6 Jan 2020) to Current I Working]<br>
+						<b>Location</b> - Bangalore, Madhevpura<br>
+
+					</li> -->
+
+				</ul>
+			</div>
+
+			<div class="col-md-6">
+				<h1 class="text-center">My Eduction</h1>
+				<ul class="timeline">
+					<li>
+						
+						<h4><span> 2019 - </span>Bachelor Of Engineering</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
+						<b>University </b> - Gujarat Technological University<br>
+						<b>Session</b> - 2016 to 2019<br>
+						<b>Aggregate</b> - 6.7 CGPA<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2016 - </span>Diploma Engineering</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute </b> - Ipcowala Institute of Engineering & Technology<br>
+						<b>University </b> - Gujarat Technological University<br>
+						<b>Session</b> - 2013 to 2016<br>
+						<b>Aggregate</b> - 7.5 CGPA<br>
+
+					</li>
+					<li>
+						
+						<h4><span> 2013 - </span>High School (10th)</h4>
+						<!-- <p>Write any text here</p> -->
+						<b>Institute / School </b> - BCJ High School Jalundh<br>
+						<b>Board </b> - Gujarat Secondary and Higher Secondary Education Board<br>
+						<b>Session</b> - 2012 to 2013<br>
+						<b>Aggregate</b> - 74.5 % <br>
+
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<!----------------------Work Experience-------------------->
+
+
+
+
+ <div class="services" id="Experience">
+	<div class="container">
+
+		<h1 class="text-center">Work Experience</h1>
+		<p class="text-center">I have total 3 Year Of Experience as A Software Developer (React Native, ReactJS and Flutter (Android & iOS both)). I worked On ReactJS Projects, React native and Flutter Application.</p>
+		<!-- <h1 class="text-center">Technical Skills</h1> -->
+		<div class="row">
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-rocket"></i><span>STATIC WEBSITES</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li><a href="http://foreignedge.in">foreignedge.in</a></li>
+						<li><a href="https://www.arrayz.com">www.arrayz.com</a></li>
+						<li><a href="http://adarshdeveloper.co.in/greens/">adarshdeveloper.co.in</a></li>
+						<li><a href="https://pristineandaman.com/honeymoon/">pristineandaman.com</a></li>
+						<li><a href="http://foreignedge.in">shapoorjipallonjibuilders.com</a></li>
+						<!-- <li><a href="http://foreignedge.in">PHP</a></li>
+						<li><a href="http://foreignedge.in">Basic Of React Native</a> </li> -->
+
+					</ol>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-laptop"></i><span>WORDPRESS WEBSITE</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li><a href="https://www.shobhanihalani.com">shobhanihalani.com</a></li>
+						<li><a href="http://foreignedge.in">mindscan.edu.in</a></li>
+						<li><a href="http://skillhirer.com/ ">skillhirer.com</a></li>
+						<li><a href="https://gulachi.com/">gulachi.com</a></li>
+						<li><a href="https://pristineandaman.com/">pristineandaman.com</a></li>
+						<li><a href="http://chamaravajra.com/">chamaravajra.com</a></li>
+						<!-- <li><a href="http://foreignedge.in">Sublime, Notepad++</a></li> -->
+
+					</ol>
+
+				</div>
+
+			</div>
+			<div class="col-md-4">
+				<div class="services-box">
+					<i class="fa fa-line-chart"></i><span>DYNAMIC Website</span>
+					<!-- <p>Follow my Linkdin account.<br> And check My Some Projects,    Click the Link and show tha project</p> -->
+					<ol>
+						<li>I Created a Ecommerce Website  Using ReactJS </li>
+						<li>I Created a Food Delivery App Using React Native </li>
+						<li>Worked on React native project (worked on Sportly.me)</li>
+						<li>Worked on React native project<a href="https://play.google.com/store/apps/details?id=com.sparqatar&pli=1">(Spar Qatar)</a></li>
+						<li>Working on Flutter project</li>
+					</ol>	
+				</div>
+			</div>
+			</div>
+	</div>
+</div> 
+
+
+
+<!---------------------- Contact -------------------->
+
+
+<div class="contact" id="contact">
+	<div class="container text-center">
+		<h1>Contact Me</h1>
+		<!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and <br>scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, </p> -->
+				<div class="row">
+					<div class="col-md-4">
+						<i class="fa fa-phone"></i>
+						<h2>Mobile No</h2>
+						<a href="tel:8200209808" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 8200209808</p></a><!-- 
+						<a href="tel:9157858646" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">+91 9157858646</p></a> -->
+					</div>
+					<div class="col-md-4">
+						<i class="fa fa-envelope"></i>
+						<h2>Email Id</h2>
+						<p><a href="mailto:smistry6518@gmail.com">smistry6518@gmail.com</a></p>
+
+
+
+					</div>
+					<div class="col-md-4">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<h2>Address</h2>
+						<p><a href="#">No.05 Ground Floor, Seeliyammal Lane Muregespalya, Bangalore </a></p>
+
+					</div>
+				</div>
+				<button type="button" class="btn btn-primary"><a href="https://drive.google.com/file/d/1m8_Eh8q5gqKrd_YmZpEIsYIH9JfFWegA/view?usp=sharing" target="_blank"><i class="fa fa-download"></i>Resume</a></button>
+				<button type="button" class="btn btn-primary"><a href="#"><i class="fa fa-rocket"></i>Here Me</a></button>
+
+	</div>
+	<div class="footer text-center">
+		<h5>Made <i class="fa fa-heart-o"></i> By Sanjay Mistry </h5>
+	</div>
+</div>
+
+
+</section>
+
+
+<!--------------Smooth Scroll--------------->
+<script src="smooth-scroll.js"></script>
+
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+
 </body>
 </html>
