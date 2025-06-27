@@ -1,51 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
-    const animatedSections = document.querySelectorAll('.animated-section');
-    const skillCards = document.querySelectorAll('.skill-card');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    // Smooth Scrolling Function
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const navbarHeight = navbar.offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
-    // Navbar background change on scroll
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Navbar background and Active Link on Scroll
+    const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
+        // Navbar background
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        // Active link highlighting
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - navbar.offsetHeight - 50) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
     });
 
-    // Intersection Observer for animations
-    const sectionObserver = new IntersectionObserver((entries, observer) => {
+    // Intersection Observer for fade-in animations on scroll
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Animate timeline if it's in the section
-                const timeline = entry.target.querySelector('.timeline');
-                if (timeline) {
-                    timeline.classList.add('visible');
-                }
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.15 });
+    }, observerOptions);
 
-    animatedSections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-    
-    // 3D Tilt effect for skill cards
-    skillCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            const rotateX = -y / 20;
-            const rotateY = x / 20;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        });
+    document.querySelectorAll('.animated-section, .timeline-item').forEach(el => {
+        observer.observe(el);
     });
 });
