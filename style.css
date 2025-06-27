@@ -1,21 +1,39 @@
 /* General Body and Font Styles */
 body {
- 	margin: 0;
- 	padding: 0;
- 	font-family: 'Poppins', sans-serif; /* Modern font */
-    color: #333; /* Softer text color */
-    line-height: 1.6;
-    background-color: #f8f9fa; /* Light background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif; /* Primary body font */
+    color: #333;
+    line-height: 1.7;
+    background-color: #f0f2f5; /* Light, clean background */
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth; /* Smooth scroll for all links */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Headings font */
+    color: #2c3e50; /* Darker heading color */
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #555;
 }
 
 /* Reusable Section Styles */
+.section-padding {
+    padding: 80px 0; /* Consistent padding for all sections */
+}
+
 .section-title {
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 40px;
-    margin-top: 50px;
-    color: #2c3e50; /* Darker heading color */
+    margin-bottom: 50px;
+    color: #2c3e50;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    display: inline-block; /* To apply line width only to text */
 }
 .section-title::after {
     content: '';
@@ -23,294 +41,290 @@ body {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    height: 3px;
-    width: 60px;
-    background-color: #007bff; /* Accent color */
-    border-radius: 5px;
+    height: 4px;
+    width: 80px; /* Thicker, wider underline */
+    background-color: #007bff; /* Primary accent color */
+    border-radius: 2px;
 }
+.section-title.text-white::after {
+    background-color: #fff; /* White underline for dark backgrounds */
+}
+
 .section-description {
     max-width: 800px;
     margin: 0 auto 60px;
     color: #6c757d;
-    font-size: 1.1em;
+    font-size: 1.15em;
+    line-height: 1.8;
 }
 
-/*------------Header CSS--------------*/
-#header {
- 	height: 100vh;
- 	background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(img/gallery03.jpg);
- 	background-position: center;
- 	background-size: cover;
- 	background-attachment: fixed;
+/* Background Colors */
+.bg-light-grey {
+    background-color: #f8f9fa; /* Slightly lighter than body background */
+}
+.bg-dark-blue {
+    background-color: #2c3e50; /* Darker background for contact */
+}
+
+/*------------Hero Header (Formerly Header) CSS--------------*/
+#hero-header {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(img/gallery03.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
 }
-.user-box {
-    /* Removed absolute positioning as flexbox handles centering */
+.user-profile {
+    padding: 30px;
+    border-radius: 12px;
+    background-color: rgba(0,0,0,0.5); /* Slightly transparent overlay */
+    backdrop-filter: blur(5px); /* Subtle blur effect */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
-.user-box img {
- 	border-radius: 50%;
- 	width: 200px; /* Slightly smaller for a cleaner look */
- 	border: 5px solid #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Subtle shadow */
+.user-profile img {
+    border-radius: 50%;
+    width: 180px; /* Clean, slightly smaller profile pic */
+    height: 180px;
+    object-fit: cover;
+    border: 6px solid #fff; /* White border */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
-.user-box img:hover {
- 	width: 220px; /* Slightly larger on hover */
- 	border: 5px solid #007bff; /* Accent border on hover */
+.user-profile img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    border-color: #007bff; /* Accent border on hover */
 }
-.user-box h1 {
- 	color: #fff;
- 	font-weight: 700;
- 	margin: 15px 0 5px;
-    font-size: 3em;
+.user-profile h1 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 3.5rem; /* Larger name */
+    letter-spacing: 1.5px;
 }
-.user-box h5 {
- 	color: #fff;
-    font-size: 1.2em;
+.user-profile h5 {
+    color: #e0e0e0;
+    font-size: 1.6rem;
     font-weight: 400;
+    margin-bottom: 25px;
 }
-.scroll-btn {
- 	position: absolute;
- 	bottom: 30px; /* More space from bottom */
- 	left: 50%;
- 	transform: translateX(-50%);
- 	border: 2px solid #fff; /* Thinner border */
- 	padding: 8px 12px 25px; /* Adjusted padding */
- 	border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.social-links a {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-.scroll-btn:hover {
+.social-links a:hover {
+    color: #007bff; /* Accent color on hover */
+    transform: translateY(-5px);
+}
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite; /* Bouncing animation */
+}
+.scroll-down-arrow i {
+    color: #fff;
+    font-size: 2.5rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    padding: 10px;
+}
+.scroll-down-arrow i:hover {
+    color: #007bff;
     border-color: #007bff;
 }
-.scroll-bar span {
- 	border: 3px solid #fff; /* Thinner inner border */
- 	font-size: 14px;
- 	border-radius: 30px;
-}
-.scroll-bar {
- 	animation: mover 1s infinite alternate;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-15px); }
+    60% { transform: translateY(-8px); }
 }
 
-/* Cylon Eye (Decorative, keep if desired) */
-.polling_message {
-   color: white;
-   float: left;
-   margin-right: 2%;
+
+/*----------Navigation Bar----------*/
+.navbar {
+    background-color: #fff; /* White background */
+    padding: 15px 0; /* More vertical padding */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Stronger shadow */
+    transition: all 0.3s ease;
 }
-.view_port {
-   background-color: #2c3e50; /* Darker background for eye */
-   height: 20px; /* Slightly smaller */
-   width: 100%;
-   overflow: hidden;
+.navbar.scrolled {
+    background-color: #fff; /* Stay white but might add border/shadow for distinction */
+    padding: 10px 0; /* Slightly reduce padding on scroll */
 }
-.cylon_eye {
-   background-color: #ff4136; /* Red color */
-   background-image: linear-gradient(to right,
-       rgba(0, 0, 0, .9) 25%,
-       rgba(0, 0, 0, .1) 50%,
-       rgba(0, 0, 0, .9) 75%);
-   color: white;
-   height: 100%;
-   width: 30%; /* Narrower eye */
-   -webkit-animation: 5s linear 0s infinite alternate move_eye;
-           animation: 5s linear 0s infinite alternate move_eye;
+.navbar-brand img {
+    height: 45px; /* Consistent logo size */
 }
-@-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; } }
-         @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; } }
-@keyframes mover {
- 	0%{transform: translateY(0);}
- 	100%{transform: translateY(15px);}
+.navbar-toggler {
+    border: none;
+    outline: none !important;
 }
+.navbar-toggler .fas.fa-bars {
+    font-size: 28px;
+    color: #2c3e50; /* Dark color for toggler icon */
+}
+.navbar-nav .nav-item .nav-link {
+    color: #2c3e50 !important; /* Dark text for links */
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin: 0 18px; /* More spacing between links */
+    position: relative;
+    padding-bottom: 5px; /* Space for underline */
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0); /* Hidden by default */
+    width: 100%;
+    height: 3px;
+    background-color: #007bff;
+    transition: transform 0.3s ease;
+}
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item.active .nav-link::after {
+    transform: translateX(-50%) scaleX(1); /* Show on hover/active */
+}
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+    color: #007bff !important; /* Accent color on hover/active */
+}
+
 
 /*----------About Section----------*/
-.about {
- 	padding-top: 80px;
-    padding-bottom: 60px;
+#about {
     background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    margin-top: 30px;
-    border-radius: 8px;
 }
-.about h3 {
-    font-weight: 600;
-    color: #007bff; /* Accent color for name */
+.profile-about-img {
+    width: 300px; /* Larger image in about section */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #f0f2f5; /* Light border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.profile-about-img:hover {
+    transform: scale(1.03);
+    border-color: #007bff;
+}
+#about h3 {
+    font-size: 2.2rem;
+    color: #007bff;
     margin-bottom: 20px;
-    font-size: 2em;
 }
-.about p {
-    margin-bottom: 25px;
-    color: #555;
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 .personal-info {
     list-style: none;
     padding: 0;
+    margin-bottom: 30px;
 }
 .personal-info li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+.personal-info li b {
+    color: #2c3e50;
+}
+.skills-overview p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+.skills-overview strong {
+    color: #2c3e50;
 }
 
-/* Navigation Bar */
-.nav-bar {
- 	top: 0;
- 	position: sticky;
- 	z-index: 1000; /* High z-index to stay on top */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.navbar {
- 	background-color: #2c3e50; /* Darker nav background */
-    padding: 10px 15px;
-}
-.navbar-brand img {
- 	height: 40px; /* Slightly smaller logo */
-}
-.nav-bar .fa-bars {
- 	font-size: 30px; /* Slightly smaller icon */
- 	color: #fff;
-}
-.nav-link {
- 	color: #fff !important;
- 	font-weight: 500;
- 	margin: 0 15px;
-    transition: color 0.3s ease;
-}
-.nav-link:hover {
-    color: #007bff !important; /* Accent color on hover */
-}
-.navbar-nav .nav-item.active .nav-link {
-    color: #007bff !important; /* Active link accent */
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 3px;
-}
-
-
-/* Skills Bar (moved from About section) - can be removed if not used */
-.skills-bar {
-    padding-top: 30px;
-    margin-top: 30px;
-    border-top: 1px solid #eee; /* Separator from About text */
-}
-.skills-bar p {
- 	margin-bottom: 8px;
- 	font-weight: 600;
-    color: #333;
-}
-.progress {
- 	border-radius: 10px !important; /* Softer border-radius */
- 	margin-bottom: 15px;
- 	height: 10px; /* Thinner progress bar */
- 	background-color: #e9ecef; /* Lighter background for empty bar */
-}
-.progress-bar {
- 	border-radius: 10px;
- 	background:#007bff !important; /* Accent color for bar fill */
- 	transition: width 0.8s ease-in-out; /* Smooth animation for width change */
-}
-
-/*------------Technical Skills Section (Services)------------*/
-.services {
- 	padding-top: 80px;
- 	padding-bottom: 80px;
- 	background-color: #f1f4f8; /* Light grey background */
-}
-.services-box {
- 	background:#fff;
- 	padding: 30px;
- 	margin-top: 30px;
- 	border-radius: 8px; /* Softer edges */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* More pronounced shadow */
+/*----------Technical Skills Section----------*/
+.skill-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
     transition: all 0.4s ease;
-    min-height: 350px; /* Ensure boxes have consistent height */
+    height: 100%; /* Ensures consistent height */
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
-.services-box .fa {
- 	margin-right: 15px;
- 	font-size: 35px; /* Larger icons */
-    color: #007bff; /* Accent color for icons */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+.skill-card i {
+    font-size: 3.5rem; /* Larger icons */
+    color: #007bff;
+    margin-bottom: 25px;
     transition: color 0.4s ease;
 }
-.services-box span {
- 	margin: 5px 0;
- 	font-size: 1.5em; /* Larger title */
- 	font-weight: 700;
+.skill-card:hover i {
+    color: #2c3e50; /* Change icon color on hover */
+}
+.skill-card h4 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
     color: #2c3e50;
-    display: block; /* Make span a block to push content below */
-    margin-bottom: 15px;
 }
-.services-box ul {
-    list-style: none; /* Remove default bullets */
+.skill-card ul {
+    list-style: none;
     padding: 0;
-    margin-top: 15px;
-    flex-grow: 1; /* Allow content to grow */
+    text-align: left;
+    width: 100%;
+    margin-top: auto; /* Push content to bottom if varying heights */
 }
-.services-box ul li {
-    margin-bottom: 8px;
-    font-size: 1.05em;
-    color: #555;
+.skill-card ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
     position: relative;
-    padding-left: 20px; /* Space for custom bullet */
+    padding-left: 25px;
+    color: #555;
 }
-.services-box ul li::before {
-    content: '\f00c'; /* FontAwesome check icon */
-    font-family: 'FontAwesome';
+.skill-card ul li::before {
+    content: '\f00c'; /* Font Awesome checkmark */
+    font-family: 'Font Awesome 5 Free'; /* Specify font-family for Font Awesome 5 */
+    font-weight: 900; /* Required for solid icons in FA5 */
     position: absolute;
     left: 0;
     color: #28a745; /* Green checkmark */
-    font-size: 0.8em;
+    font-size: 0.9em;
     top: 3px;
 }
 
-.services-box:hover {
- 	background:#007bff; /* Accent background on hover */
- 	color: #fff;
- 	transform: translateY(-10px); /* Lift effect */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Stronger shadow on hover */
-}
-.services-box:hover .fa {
- 	color: #fff; /* White icon on hover */
-}
-.services-box:hover span {
-    color: #fff; /* White title on hover */
-}
-.services-box:hover ul li {
-    color: #e9ecef; /* Lighter text on hover */
-}
-.services-box:hover ul li::before {
-    color: #fff; /* White checkmark on hover */
-}
 
-/*------------Resume/Experience Section------------*/
-.resume {
- 	padding-top: 80px;
- 	padding-bottom: 80px;
- 	background:#fff;
-}
-
-/* New Accordion Styles for Experience */
+/*------------Experience & Projects Accordion Styling----------*/
 .experience-card, .project-card {
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    overflow: hidden; /* Ensures border-radius applies to children */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
 }
 .experience-card .card-header, .project-card .card-header {
-    background-color: #e9f2ff; /* Lighter accent for header */
-    border-bottom: 1px solid #d1e0ff;
-    padding: 0; /* Remove default padding */
+    background-color: #fff; /* White header background */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0;
 }
-.experience-card .card-header h2 button, .project-card .card-header h2 button {
-    font-size: 1.25em;
+.experience-card .card-header h3 button, .project-card .card-header h3 button {
+    font-size: 1.4rem; /* Larger clickable area text */
     font-weight: 600;
     color: #2c3e50;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 20px 30px; /* More padding */
     width: 100%;
     text-align: left;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -318,305 +332,416 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-.experience-card .card-header h2 button:hover, .project-card .card-header h2 button:hover {
-    background-color: #d1e0ff;
+.experience-card .card-header h3 button:hover, .project-card .card-header h3 button:hover {
+    background-color: #f8f9fa; /* Lighter hover background */
     color: #007bff;
 }
-.experience-card .card-header h2 button:focus, .project-card .card-header h2 button:focus {
+.experience-card .card-header h3 button:focus, .project-card .card-header h3 button:focus {
     box-shadow: none;
 }
-.experience-card .card-header h2 button .job-title, .project-card .card-header h2 button .fa {
-    color: #007bff;
-    margin-right: 10px;
+.experience-card .card-header h3 button .job-role,
+.project-card .card-header h3 button { /* For project titles */
+    color: #007bff; /* Accent color for role/project category */
 }
-.experience-card .card-header h2 button .company-name, .project-card .card-header h2 button .company-name {
+.experience-card .card-header h3 button .company-name {
     font-style: italic;
     font-weight: 400;
     color: #555;
-    flex-grow: 1;
+    margin-left: 10px;
 }
-.experience-card .card-header h2 button .duration {
-    font-size: 0.9em;
+.experience-card .card-header h3 button .job-duration {
+    font-size: 1rem;
     color: #6c757d;
+    white-space: nowrap; /* Prevent duration from wrapping */
 }
+.accordion-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+    color: #007bff; /* Accent color for icon */
+}
+.experience-card .card-header h3 button[aria-expanded="true"] .accordion-icon,
+.project-card .card-header h3 button[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+}
+
 .experience-card .card-body, .project-card .card-body {
-    padding: 25px;
+    padding: 30px;
     background-color: #fff;
+    border-top: 1px dashed #eee; /* Dashed separator for content */
+}
+.experience-card .card-body p, .project-card .card-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 .experience-card .card-body ul, .project-card .card-body ul {
     list-style: none;
-    padding-left: 20px;
-    margin-bottom: 10px;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 .experience-card .card-body ul li, .project-card .card-body ul li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1rem;
     color: #555;
 }
 .experience-card .card-body ul li::before, .project-card .card-body ul li::before {
-    content: '\2022'; /* Unicode for a solid bullet point */
-    font-size: 1.2em;
-    color: #007bff; /* Accent color for bullet */
+    content: '\f058'; /* Font Awesome check-circle icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9em;
+    color: #28a745; /* Green color for success */
     position: absolute;
     left: 0;
-    top: -2px;
+    top: 5px;
 }
 .experience-card .card-body strong, .project-card .card-body strong {
     color: #2c3e50;
 }
 
-
-/* Education Section (reusing .resume for container) */
+/* Education Section */
 #education-section {
-    background-color: #f8f9fa; /* Consistent background */
-    padding-top: 80px;
-    padding-bottom: 80px;
+    background-color: #f0f2f5;
 }
-#education-section .timeline {
-    border-left: 2px solid #007bff; /* Accent line */
-    padding-left: 25px;
-    margin-left: 0; /* Adjusting margin */
-}
-#education-section .timeline li {
-    background: #fff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
+.timeline-container {
     position: relative;
+    padding-left: 40px; /* Space for the timeline line */
 }
-#education-section .timeline li::before {
+.timeline-container::before {
     content: '';
     position: absolute;
-    left: -37px; /* Position circle on the line */
-    top: 20px;
-    width: 15px;
-    height: 15px;
+    left: 15px;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #ccc; /* Lighter timeline line */
+    border-radius: 2px;
+}
+.timeline-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    position: relative;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -33px; /* Position circle on the line */
+    top: 30px;
+    width: 18px;
+    height: 18px;
     background-color: #007bff; /* Accent circle */
     border-radius: 50%;
-    border: 3px solid #fff; /* White border to make it pop */
+    border: 4px solid #fff; /* White border to make it pop */
     z-index: 1;
 }
-#education-section .timeline li h4 {
-    background: none; /* Remove background */
-    color: #2c3e50; /* Darker text */
-    font-size: 1.3em;
-    padding: 0;
-    margin-bottom: 5px;
-}
-#education-section .timeline li h4 span {
+.timeline-item h4 {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #6c757d; /* Lighter color for year */
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.timeline-item h4 span {
+    font-weight: 400;
+    color: #6c757d;
     font-size: 0.9em;
     display: block; /* New line for year */
+    margin-top: 5px;
 }
-#education-section .timeline li b {
-    display: block; /* Ensure each detail is on new line */
-    margin-bottom: 3px;
-    color: #555;
-    font-weight: 400;
+.timeline-item p {
+    font-size: 1rem;
+    margin-bottom: 0;
 }
-
-
-/* Social Icon */
-.social-icon {
- 	top: 50%;
- 	transform: translateY(-50%);
- 	position: fixed; /* Changed to fixed to always be visible */
- 	z-index: 999;
- 	width: 60px; /* Slightly narrower */
-    right: 0; /* Align to the right */
-}
-.social-icon ul {
- 	padding: 0;
- 	list-style-type: none;
-}
-.social-icon ul li {
- 	height: 50px; /* Slightly smaller height */
- 	width: 50px; /* Consistent width */
- 	padding-left: 10px; /* Adjusted padding */
- 	padding-top: 10px; /* Adjusted padding */
- 	margin-bottom: 5px; /* Space between icons */
- 	color: #fff;
- 	background-color: #2c3e50; /* Darker background */
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-.social-icon ul li:hover {
- 	width: 100px; /* Expands more */
- 	padding-left: 20px; /* More padding on hover */
-    background-color: #007bff; /* Accent color on hover */
-}
-.social-icon ul li .fa {
- 	font-size: 28px; /* Slightly smaller icon */
- 	padding-top: 0; /* Remove extra padding */
+.timeline-item p b {
+    color: #2c3e50;
 }
 
 
 /*-------------------Contact Section---------------------*/
-.contact {
- 	padding-top: 80px;
- 	background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(img/background3.jpg);
- 	background-position: center;
- 	background-size: cover;
- 	background-attachment: fixed;
- 	color: #fff;
-    padding-bottom: 80px;
+#contact {
+    background-color: #2c3e50; /* Dark blue background */
 }
-.contact .row {
- 	padding: 40px 0; /* More padding */
- 	font-size: 20px;
+#contact .section-title {
+    color: #fff;
 }
-.contact .col-md-4 .fa {
- 	padding: 10px;
- 	font-size: 45px; /* Larger icon */
+.contact-info-box {
+    background-color: rgba(0,0,0,0.2); /* Slightly transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 100%;
+}
+.contact-info-box:hover {
+    background-color: rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+}
+.contact-info-box i {
+    font-size: 3.5rem;
     color: #007bff; /* Accent color */
+    margin-bottom: 25px;
+}
+.contact-info-box h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
     margin-bottom: 15px;
 }
-.contact h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    font-weight: 600;
+.contact-info-box p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 0;
 }
-.contact p {
-    font-size: 1.1em;
-    color: #e9ecef;
-}
-.contact .col-md-4 a {
- 	color: #e9ecef; /* Lighter link color */
+.contact-info-box a {
+    color: #e0e0e0;
     text-decoration: none;
     transition: color 0.3s ease;
 }
-.contact .col-md-4 a:hover {
-    color: #007bff; /* Accent color on hover */
+.contact-info-box a:hover {
+    color: #007bff;
 }
-.contact .btn {
- 	padding: 12px 30px; /* Larger buttons */
- 	margin:10px;
- 	border-radius: 50px; /* More rounded */
- 	border: 2px solid #fff;
- 	background:transparent;
- 	font-weight: 600;
- 	text-transform: uppercase;
- 	letter-spacing: 1px;
- 	transition: all 0.4s ease;
+.button-group {
+    margin-top: 40px;
 }
-.contact .btn:focus {
- 	box-shadow: none !important;
+.btn-primary-custom, .btn-secondary-custom {
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 15px;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-.contact .btn:hover {
- 	border-color: #007bff;
- 	background-color: #007bff !important;
+.btn-primary-custom {
+    background-color: #007bff;
+    border: 2px solid #007bff;
     color: #fff;
 }
-.contact .btn a {
- 	color: #fff;
- 	text-decoration: none;
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-3px);
 }
-.contact .btn .fa {
- 	margin-right: 10px;
- 	font-size: 1em; /* Normal icon size */
+.btn-secondary-custom {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
 }
-.footer {
- 	background-color: #2c3e50; /* Darker footer */
- 	height: 60px;
- 	margin-top: 0; /* No margin-top if contact section handles padding */
- 	color: #fff;
- 	padding-top: 15px;
- 	font-size: 0.9em;
+.btn-secondary-custom:hover {
+    background-color: #fff;
+    color: #2c3e50;
+    transform: translateY(-3px);
 }
-.fa-heart-o {
- 	color: #e74c3c; /* A more vibrant red */
+.btn-primary-custom i, .btn-secondary-custom i {
+    margin-right: 10px;
 }
 
+
+/* Footer */
+.footer {
+    background-color: #222; /* Darker footer */
+    color: #aaa;
+    font-size: 0.9rem;
+    padding: 20px 0;
+}
+.footer p {
+    margin-bottom: 0;
+    color: #aaa;
+}
+.footer i.fa-heart {
+    color: #e74c3c; /* Vibrant red heart */
+    margin: 0 5px;
+}
 
 /* Media Queries for Responsiveness */
-@media only screen and (max-width: 768px) {
- 	body {
- 		overflow-x: hidden;
- 	}
-    .user-box h1 {
-        font-size: 2.5em;
+@media (max-width: 991.98px) { /* Tablet and smaller */
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
     }
-    .user-box h5 {
+    .section-description {
+        margin-bottom: 40px;
         font-size: 1em;
     }
-    .social-icon {
-        width: 50px;
-        top: auto; /* Allow natural flow at bottom or top for smaller screens */
-        bottom: 0;
-        left: 0;
-        right: auto;
-        transform: none;
-        display: flex; /* Make it a row for mobile */
-        justify-content: center;
-        background-color: rgba(44, 62, 80, 0.9); /* Semi-transparent bar */
-        border-top-right-radius: 8px;
-        border-top-left-radius: 8px;
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    #hero-header .user-profile {
+        padding: 20px;
     }
-    .social-icon ul {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        padding: 5px 0;
+    #hero-header .user-profile img {
+        width: 150px;
+        height: 150px;
     }
-    .social-icon ul li {
- 	    height: 40px;
- 	    width: 40px;
- 	    padding: 8px; /* Adjusted padding */
- 	    margin: 0 5px;
-        border-radius: 50%; /* Make them circles */
-        background-color: transparent; /* Transparent background */
-        box-shadow: none;
-        border: 1px solid #fff; /* White border */
- 	}
-    .social-icon ul li:hover {
-        width: 40px; /* No expansion on mobile */
-        padding: 8px;
-        background-color: rgba(255,255,255,0.2); /* Light hover effect */
-        transform: translateY(-3px);
+    #hero-header .user-profile h1 {
+        font-size: 2.8rem;
     }
-    .social-icon ul li .fa {
- 	    font-size: 20px; /* Smaller icon */
+    #hero-header .user-profile h5 {
+        font-size: 1.3rem;
     }
-    .about {
-        padding-top: 40px;
-        padding-bottom: 30px;
-        margin: 20px;
+    .navbar-nav .nav-item .nav-link {
+        margin: 0 10px;
     }
-    .profile-img {
+    #about .profile-about-img {
+        width: 250px;
         height: 250px;
+    }
+    .skill-card {
+        padding: 25px;
+    }
+    .skill-card i {
+        font-size: 2.8rem;
+    }
+    .skill-card h4 {
+        font-size: 1.4rem;
+    }
+    .experience-card .card-header h3 button, .project-card .card-header h3 button {
+        font-size: 1.15rem;
+        padding: 15px 20px;
+    }
+    .experience-card .card-header h3 button .job-duration {
+        font-size: 0.9em;
+    }
+    .timeline-item {
+        padding: 20px;
+    }
+    .timeline-item::before {
+        left: -28px;
+        width: 15px;
+        height: 15px;
+    }
+    .contact-info-box {
+        padding: 20px;
+    }
+    .contact-info-box i {
+        font-size: 3rem;
+    }
+    .contact-info-box h3 {
+        font-size: 1.4rem;
+    }
+    .btn-primary-custom, .btn-secondary-custom {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 767.98px) { /* Mobile */
+    .section-padding {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .section-title::after {
+        width: 60px;
+        height: 3px;
+    }
+    .section-description {
+        margin-bottom: 30px;
+    }
+    #hero-header .user-profile img {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+    }
+    #hero-header .user-profile h1 {
+        font-size: 2rem;
+    }
+    #hero-header .user-profile h5 {
+        font-size: 1.1rem;
+    }
+    .social-links a {
+        font-size: 1.5rem;
+        margin: 0 10px;
+    }
+    .scroll-down-arrow i {
+        font-size: 2rem;
+        padding: 8px;
+    }
+    .navbar {
+        padding: 10px 0;
+    }
+    .navbar-collapse {
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        padding: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .navbar-nav .nav-item .nav-link {
+        margin: 5px 0;
+        text-align: center;
+        padding: 8px 0;
+    }
+    .navbar-nav .nav-item .nav-link::after {
+        display: none; /* Hide underline for mobile nav */
+    }
+    .navbar-nav .nav-item .nav-link:hover,
+    .navbar-nav .nav-item.active .nav-link {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+    #about .profile-about-img {
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
+    }
+    #about h3 {
+        font-size: 1.8rem;
+    }
+    #about p, .personal-info li, .skills-overview p {
+        font-size: 1rem;
+    }
+    .skill-card {
+        padding: 20px;
+    }
+    .skill-card i {
+        font-size: 2.5rem;
+    }
+    .skill-card h4 {
+        font-size: 1.2rem;
+    }
+    .skill-card ul li {
+        font-size: 0.95rem;
+    }
+    .experience-card .card-header h3 button, .project-card .card-header h3 button {
+        flex-direction: column; /* Stack elements */
+        align-items: flex-start;
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+    .experience-card .card-header h3 button .job-duration {
+        margin-top: 5px;
+        font-size: 0.85em;
+    }
+    .experience-card .card-body p, .project-card .card-body p,
+    .experience-card .card-body ul li, .project-card .card-body ul li {
+        font-size: 0.95rem;
+    }
+    .timeline-container {
+        padding-left: 30px;
+    }
+    .timeline-container::before {
+        left: 10px;
+    }
+    .timeline-item::before {
+        left: -20px;
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+    }
+    .timeline-item h4 {
+        font-size: 1.2rem;
+    }
+    .contact-info-box {
         margin-bottom: 20px;
     }
-    .mydata {
- 	    text-align: center !important;
- 	}
-    .section-title {
-        font-size: 2em;
-    }
-    .services-box {
-        min-height: auto; /* Adjust height for mobile */
-    }
-    .experience-card .card-header h2 button, .project-card .card-header h2 button {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
-    .experience-card .card-header h2 button .duration {
-        display: block; /* Move duration to new line */
-        font-size: 0.8em;
-        margin-top: 5px;
-    }
-    #education-section .timeline {
-        padding-left: 15px;
-    }
-    #education-section .timeline li::before {
-        left: -24px;
-    }
-    .contact .col-md-4 {
-        margin-bottom: 30px;
+    .btn-primary-custom, .btn-secondary-custom {
+        width: 100%;
+        margin: 10px 0;
     }
 }
