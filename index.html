@@ -10,17 +10,19 @@
 <body>
 
     <header id="header">
-        <div class="container">
-            <div class="user-box">
-                <img src="https://i.imgur.com/your-profile-image.jpg" alt="Sanjay Mistry">
-                <h1>SANJAY MISTRY</h1>
-                <p>Experienced Frontend Developer</p>
-            </div>
+        <div class="header-content">
+            <img src="https://i.imgur.com/r6M1VAB.png" alt="Sanjay Mistry" class="profile-image">
+            <h1>SANJAY MISTRY</h1>
+            <p>Experienced Frontend Developer</p>
         </div>
+        <a href="#about" class="scroll-down-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </header>
 
     <nav id="navbar">
         <div class="container">
+            <a href="#" class="nav-logo">SM</a>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
@@ -32,28 +34,27 @@
     </nav>
 
     <main class="container">
-        <section id="about" class="fade-in">
+        <section id="about" class="animated-section">
             <h2><i class="fas fa-user-tie"></i> About Me</h2>
             <p>
                 Experienced Frontend Developer with 4+ years specializing in React Native and ReactJS, NextJS with proven expertise in cross-platform mobile app development for iOS and Android. Adept at delivering high-performance applications, including managing CI/CD pipelines. Seeking to leverage expertise in frontend technologies to drive impactful user experiences.
             </p>
-        </section><hr>
+        </section>
 
-        <section id="expertise" class="fade-in">
+        <section id="expertise" class="animated-section">
             <h2><i class="fas fa-cogs"></i> Expertise</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-card">
                     <h3><i class="fas fa-code"></i> Frontend Development</h3>
                     <ul>
                         <li>React Native</li>
                         <li>ReactJS</li>
                         <li>JavaScript</li>
                         <li>TypeScript</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li>HTML, CSS</li>
                     </ul>
                 </div>
-                <div class="skill-category">
+                <div class="skill-card">
                     <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
                     <ul>
                         <li>React Native</li>
@@ -61,17 +62,15 @@
                         <li>Redux (Saga, Thunk)</li>
                     </ul>
                 </div>
-                <div class="skill-category">
+                <div class="skill-card">
                     <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
                     <ul>
-                        <li>Git</li>
-                        <li>Bitbucket</li>
-                        <li>Jira</li>
-                        <li>Postman</li>
+                        <li>Git & Bitbucket</li>
+                        <li>Jira & Postman</li>
                         <li>CI/CD (GitHub Actions)</li>
                     </ul>
                 </div>
-                <div class="skill-category">
+                <div class="skill-card">
                     <h3><i class="fas fa-server"></i> Backend & APIs</h3>
                     <ul>
                         <li>REST APIs</li>
@@ -80,21 +79,21 @@
                     </ul>
                 </div>
             </div>
-        </section><hr>
+        </section>
 
-        <section id="experience" class="fade-in">
+        <section id="experience" class="animated-section">
             <h2><i class="fas fa-briefcase"></i> Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Software Developer (B3)</h3>
                         <p class="company">SpurTree Technologies - Bangalore</p>
-                        <p class="duration">March 2022 - Present</p>
+                        <p class="duration"><i class="far fa-calendar-alt"></i> March 2022 - Present</p>
                         <ul>
-                            <li><strong>MoonLight Collective App:</strong> Developed a cross-platform React Native app for exploring local experiences and built a ReactJS admin panel for event management.</li>
-                            <li><strong>MePrism App:</strong> Led development of a React Native app for data privacy, managing CI/CD pipelines with GitHub Actions to reduce deployment time by 50%.</li>
-                            <li><strong>Bira91 Beast:</strong> Currently leading a project using Salesforce React Native to enhance sales functionalities, implementing SmartStore and KYC features.</li>
-                            <li><strong>Traccar App:</strong> Utilized Flutter to enhance data visibility for a software service business, including a read-only data display and an iOS Watch app feature.</li>
+                            <li>Developed the MoonLight Collective cross-platform app using React Native.</li>
+                            <li>Built a ReactJS admin panel to manage community events.</li>
+                            <li>Managed CI/CD pipelines for the MePrism app, reducing deployment time by 50%.</li>
+                            <li>Leading the Bira91 Beast project using Salesforce React Native.</li>
                         </ul>
                     </div>
                 </div>
@@ -102,11 +101,11 @@
                     <div class="timeline-content">
                         <h3>L1 Software Developer</h3>
                         <p class="company">Chirpn IT Solutions - Pune</p>
-                        <p class="duration">June 2021 - February 2022</p>
+                        <p class="duration"><i class="far fa-calendar-alt"></i> Jun 2021 - Feb 2022</p>
                         <ul>
-                            <li><strong>Sportly.Me:</strong> Contributed to a React Native app for junior athletes, focusing on workout optimization, bug resolution, and performance improvement.</li>
-                            <li><strong>SPARQATAR (E-commerce):</strong> Developed a React Native mobile app for a hypermarket, featuring bilingual support and performance optimization.</li>
-                            <li><strong>ShopNow and Shimplinadhar:</strong> Led end-to-end development of e-commerce apps with responsive UI/UX and multi-language support.</li>
+                            <li>Contributed to the Sportly.Me React Native app for junior athletes.</li>
+                            <li>Developed the SPAR QATAR e-commerce app with bilingual support.</li>
+                            <li>Led end-to-end development of multiple e-commerce applications.</li>
                         </ul>
                     </div>
                 </div>
@@ -114,55 +113,52 @@
                     <div class="timeline-content">
                         <h3>Software Developer</h3>
                         <p class="company">First Floor Digital Agency - Mysore</p>
-                        <p class="duration">December 2020 - June 2021</p>
+                        <p class="duration"><i class="far fa-calendar-alt"></i> Dec 2020 - Jun 2021</p>
                         <ul>
-                            <li>Gained extensive hands-on experience with React Native, Flutter, and ReactJS.</li>
-                            <li>Contributed to multiple projects by building robust, cross-platform applications.</li>
-                            <li>This role laid a solid foundation for continuous professional growth in modern frontend technologies.</li>
+                            <li>Gained hands-on experience with React Native, Flutter, and ReactJS.</li>
+                            <li>Contributed to multiple projects building robust, cross-platform applications.</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section><hr>
+        </section>
 
-        <section id="education" class="fade-in">
+        <section id="education" class="animated-section">
             <h2><i class="fas fa-user-graduate"></i> Education</h2>
              <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Bachelor of Technology (B.Tech/B.E)</h3>
+                        <h3>B.Tech/B.E</h3>
                         <p class="company">Gujarat Technological University (GTU)</p>
-                        <p class="duration">2016 - 2019</p>
+                        <p class="duration"><i class="far fa-calendar-alt"></i> 2016 - 2019</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Diploma</h3>
                         <p class="company">Gujarat Technological University (GTU)</p>
-                        <p class="duration">2013 - 2016</p>
+                        <p class="duration"><i class="far fa-calendar-alt"></i> 2013 - 2016</p>
                     </div>
                 </div>
             </div>
-        </section><hr>
+        </section>
 
-        <section id="contact" class="fade-in">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <section id="contact" class="animated-section">
+            <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
             <div class="contact-info">
-                <p><i class="fas fa-phone"></i> 8200209808</p>
-                <p><i class="fas fa-envelope"></i> smistry6518@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Indiranagar, Bangalore, 560008</p>
-                <p><a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+                <a href="mailto:smistry6518@gmail.com"><i class="fas fa-envelope"></i> smistry6518@gmail.com</a>
+                <a href="tel:8200209808"><i class="fas fa-phone"></i> 8200209808</a>
+                <a href="https://www.linkedin.com/in/sanjay-mistry-975b64188/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sanjay Mistry. All Rights Reserved.</p>
+            <p>Designed & Built by Sanjay Mistry <i class="fas fa-heart"></i></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
